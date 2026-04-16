@@ -1,0 +1,21 @@
+{
+  "name": "HKTVmall-OpenAPI-Toolkit",
+  "owner": {
+    "name": "eeeleeeeee"
+  },
+  "metadata": {
+    "description": "HKTVmall AI toolkit plugins for Cursor"
+  },
+  "plugins": [
+    {
+      "name": "hktvmall-plugin",
+      "source": "./",
+      "description": "HKTVmall OpenAPI endpoint references, request/response examples, and code generation guidance for merchant integration",
+      "version": "1.0.0",
+      "author": { "name": "eeeleeeeee" },
+      "license": "MIT",
+      "homepage": "https://github.com/eeeleeeeee/HKTVmall-OpenAPI-Toolkit",
+      "keywords": ["hktvmall", "openapi", "merchant", "ecommerce"]
+    }
+  ]
+}

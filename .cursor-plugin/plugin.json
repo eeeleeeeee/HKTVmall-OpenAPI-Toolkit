@@ -1,0 +1,9 @@
+{
+  "name": "hktvmall-plugin",
+  "description": "HKTVmall developer tools for Cursor — OpenAPI endpoint references, request/response examples, and code generation guidance for merchant integration",
+  "version": "1.0.0",
+  "author": { "name": "eeeleeeeee" },
+  "homepage": "https://github.com/eeeleeeeee/HKTVmall-OpenAPI-Toolkit",
+  "license": "MIT",
+  "keywords": ["hktvmall", "openapi", "merchant", "ecommerce"]
+}
