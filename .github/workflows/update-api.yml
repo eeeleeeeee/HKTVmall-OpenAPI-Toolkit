@@ -1,0 +1,41 @@
+name: Update HKTVmall API Data
+
+on:
+  schedule:
+    # 每天早上 9 點 (UTC+8) 執行 = UTC 01:00
+    - cron: '0 1 * * *'
+  # 也可以手動觸發
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch & extract & generate skills
+        run: npm run build
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet || echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push if changed
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add api-data.json skills/
+          git commit -m "chore: auto-update API data $(date -u +%Y-%m-%d)"
+          git push
