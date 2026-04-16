@@ -8,7 +8,7 @@
   },
   "plugins": [
     {
-      "name": "hktvmall-openapi-toolkit",
+      "name": "hktvmall-plugin",
       "source": "./",
       "description": "HKTVmall OpenAPI endpoint references, request/response examples, and code generation guidance for merchant integration",
       "version": "1.0.0",

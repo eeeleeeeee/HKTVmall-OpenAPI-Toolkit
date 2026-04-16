@@ -1,5 +1,5 @@
 {
-  "name": "hktvmall-openapi-toolkit",
+  "name": "hktvmall-plugin",
   "description": "HKTVmall developer tools for Claude Code — OpenAPI endpoint references, request/response examples, and code generation guidance for merchant integration",
   "version": "1.0.0",
   "author": { "name": "eeeleeeeee" },

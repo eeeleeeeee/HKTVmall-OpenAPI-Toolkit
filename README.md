@@ -10,7 +10,7 @@ This toolkit gives your AI agent access to HKTVmall's OpenAPI documentation, end
 
 ```
 /plugin marketplace add eeeleeeeee/HKTVmall-OpenAPI-Toolkit
-/plugin install hktvmall-openapi-toolkit@HKTVmall-OpenAPI-Toolkit
+/plugin install hktvmall-plugin@HKTVmall-OpenAPI-Toolkit
 ```
 
 ## What you get
