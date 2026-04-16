@@ -17,6 +17,8 @@
 
 接著執行 `/reload-plugins` 重新載入，之後只要提問涉及 HKTVmall API，對應的 skills 就會自動啟用。
 
+**Cursor** — 開啟 Settings > Features > Chat，滾動到「Plugins」，搜尋 **HKTVmall**。或從 [Cursor Marketplace](https://cursor.com/marketplace) 安裝。
+
 **Gemini CLI** — 在終端機執行：
 
 ```
