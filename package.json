@@ -1,0 +1,11 @@
+{
+  "name": "hktvmall-openapi-toolkit",
+  "version": "1.0.0",
+  "description": "Gives Claude Code domain knowledge of HKTVmall OpenAPI — API specs, docs, and validation",
+  "scripts": {
+    "fetch": "node src/fetchers/fetch-bundle.js",
+    "extract": "node src/fetchers/extract-apis.js",
+    "skills": "node src/tools/generate-skills.js",
+    "build": "npm run fetch && npm run extract && npm run skills"
+  }
+}

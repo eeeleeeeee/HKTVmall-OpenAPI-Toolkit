@@ -1,0 +1,8 @@
+{
+  "name": "hktvmall-openapi-toolkit",
+  "description": "HKTVmall developer tools for Claude Code — API specs, endpoint references, and code generation guidance for HKTVmall merchant integration",
+  "version": "1.0.0",
+  "author": { "name": "eeeleeeeee" },
+  "license": "MIT",
+  "keywords": ["hktvmall", "openapi", "merchant", "ecommerce", "plugin"]
+}

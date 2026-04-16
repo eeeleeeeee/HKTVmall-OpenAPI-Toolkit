@@ -1,0 +1,1857 @@
+[
+  {
+    "id": "1758859588353",
+    "name": "Get Product Detail",
+    "nameTw": "取得商品詳情",
+    "description": "The Get Product Details API allows users to retrieve detailed product information by specifying input parameters to query specific product fields.Core Features:Input Range: Supports querying up to 100 SKU at a time, enabling flexible and bulk product data retrieval for efficient handling of large-scale product information.Data Integrity: Ensures that the returned product data includes all necessary fields and meets system requirements, reducing errors caused by missing data.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/product/hktv/product/details",
+    "method": "GET",
+    "category": "Product",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}"
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV"
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce"
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "[ \n  { \n    \"skuCode\":\"H8888881_S_a1\"\n  }\n]",
+        "description": {
+          "en": "Get Single Product Detail",
+          "zh-TW": "單筆取得商品詳情",
+          "zh-CN": "单笔获取商品详情"
+        }
+      },
+      {
+        "contentType": "application/json",
+        "example": "[\n    {\n        \"skuCode\": \"H8888881_S_a1\"\n    },\n    {\n        \"skuCode\": \"H8888881_S_a2\"\n    }\n]",
+        "description": {
+          "en": "Get Multiple Product Details",
+          "zh-TW": "多筆取得商品詳情",
+          "zh-CN": "批量获取商品详情"
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Get Single Product Detail",
+          "zh-TW": "單筆取得商品詳情",
+          "zh-CN": "单笔获取商品详情"
+        },
+        "example": "{\n    \"message\": null,\n    \"code\": \"success\",\n    \"data\": [\n        {\n            \"status\": \"success\",\n            \"skuCode\": \"a1\",\n            \"createdBy\": \"user\",\n            \"createdDate\": \"user\",\n            \"lastUpdatedBy\": \"OpenAPI-H8888881\",\n            \"lastUpdatedDate\": \"2025-10-07\",\n            \"platformCode\": \"HKTV\",\n            \"storefrontStoreCode\": \"H8888881\",\n            \"fullSkuCode\": \"H8888881_S_a1\",\n            \"productCode\": \"a1\",\n            \"skuName\": \"test 1 apple\",\n            \"skuNameTchi\": \"test 1 apple\",\n            \"skuNameZhCN\": \"test 1 apple\",\n            \"primaryCategoryCode\": \"AA83204020001\",\n            \"skuSDescEn\": \"123525\",\n            \"skuSDescCh\": \"123525\",\n            \"skuSDescZhCN\": \"123525\",\n            \"skuLDescEn\": \"123525\",\n            \"skuLDescCh\": \"123525\",\n            \"skuLDescZhCN\": null,\n            \"invoiceRemarksEn\": null,\n            \"invoiceRemarksCh\": null,\n            \"invoiceRemarksZhCN\": null,\n            \"videoLink\": null,\n            \"videoLinkEn\": null,\n            \"videoLinkCh\": null,\n            \"videoLinkZhCN\": null,\n            \"barcode\": null,\n            \"brandCode\": \"HOTTOYS\",\n            \"manuCountry\": \"EG\",\n            \"weight\": 1,\n            \"weightUnit\": \"g\",\n            \"packHeight\": 10,\n            \"packDepth\": 10,\n            \"packLength\": 10,\n            \"packDimensionUnit\": \"cm\",\n            \"packBoxType\": \"H\",\n            \"packSpecEn\": null,\n            \"packSpecCh\": null,\n            \"packSpecZhCN\": null,\n            \"currencyCode\": \"HKD\",\n            \"originalPrice\": 274,\n            \"sellingPrice\": 0,\n            \"mallDollar\": 0,\n            \"mallDollarVip\": 0.00,\n            \"productReadyMethod\": \"M\",\n            \"deliveryMethod\": \"merchant-delivery\",\n            \"returnDays\": 0,\n            \"productReadyDays\": 12,\n            \"pickupDays\": \"MSU\",\n            \"pickupTimeslot\": \"AM/PM/EV\",\n            \"colorEn\": null,\n            \"colorCh\": null,\n            \"colorZhCN\": null,\n            \"size\": null,\n            \"sizeSystem\": null,\n            \"invisibleFlag\": \"N\",\n            \"colorFamilies\": null,\n            \"featureStartTime\": null,\n            \"featureEndTime\": null,\n            \"voucherType\": null,\n            \"voucherDisplayType\": null,\n            \"userMax\": null,\n            \"redeemStartDate\": null,\n            \"urgent\": null,\n            \"expiryType\": null,\n            \"fixedRedemptionDate\": null,\n            \"uponPurchaseDate\": null,\n            \"finePrintEn\": \"123525\",\n            \"finePrintCh\": \"\",\n            \"finePrintZhCN\": \"\",\n            \"cost\": null,\n            \"removalServices\": null,\n            \"field1\": null,\n            \"value1\": null,\n            \"field2\": null,\n            \"value2\": null,\n            \"field3\": null,\n            \"value3\": null,\n            \"discountText\": null,\n            \"discountTextTchi\": null,\n            \"discountTextZhCN\": null,\n            \"style\": null,\n            \"goodsType\": null,\n            \"warrantyPeriodUnit\": null,\n            \"warrantyPeriod\": null,\n            \"warrantySupplierEn\": null,\n            \"warrantySupplierCh\": null,\n            \"warrantySupplierZhCN\": null,\n            \"serviceCentreAddressEn\": null,\n            \"serviceCentreAddressCh\": null,\n            \"serviceCentreAddressZhCN\": null,\n            \"serviceCentreEmail\": null,\n            \"serviceCentreContact\": null,\n            \"warrantyRemarkEn\": null,\n            \"warrantyRemarkCh\": null,\n            \"warrantyRemarkZhCN\": null,\n            \"onOfflineStatus\": \"ONLINE\",\n            \"productCategories\": [\n                {\n                    \"productCatCode\": \"AA83204020001\",\n                    \"name\": \"AA83204020001 - Cat Carrying Bags\",\n                    \"productCatName\": \"Cat Carrying Bags\"\n                }\n            ],\n            \"imagesMainPhotoList\": [\n                {\n                    \"fileName\": \"123456.jpg\",\n                    \"filePath\": \"https://cdn-media-test.hkmpcl.com.hk/dev-hktv-mms/HKTV/mms/uploadProductImage/247e/b58d/4398/123456.jpg\",\n                    \"imageType\": \"main\"\n                }\n            ],\n            \"imagesProductPhotoList\": [\n                {\n                    \"fileName\": \"123456.jpg\",\n                    \"filePath\": \"https://cdn-media-test.hkmpcl.com.hk/dev-hktv-mms/HKTV/mms/uploadProductImage/fb4c/3f88/7122/123456.jpg\",\n                    \"imageType\": \"main\"\n                }\n            ],\n            \"imagesOtherPhotoList\": [\n                {\n                    \"fileName\": \"123456.jpg\",\n                    \"filePath\": \"https://cdn-media-test.hkmpcl.com.hk/dev-hktv-mms/HKTV/mms/uploadProductImage/fb4c/3f88/7122/123456.jpg\",\n                    \"imageType\": \"main\"\n                }\n            ],\n            \"imagesAdvertisingList\": null,\n            \"commissionRate\": 10.00,\n            \"brandNameEn\": \"HOTTOYS\",\n            \"brandNameTc\": \"HOTTOYS\",\n            \"brandNameZhCN\": \"HOTTOYS\",\n            \"isPrimarySku\": \"Y\",\n            \"storeLandMarkFlag\": \"N\",\n            \"partnerInfo\": null,\n            \"externalPlatform\": null\n        }\n    ]\n}"
+      }
+    ]
+  },
+  {
+    "id": "1758860129507",
+    "name": "Create Product",
+    "nameTw": "建立商品",
+    "description": "The Create Product API enables users to create products, supporting the creation of only one product per request. This API is suitable for basic operations of product addition on the HKTV platform, allowing for fast and accurate product data creation.Core Features:Single Product Creation: Each request supports creating only one product, ensuring operational stability and accuracy.Flexible Configuration: Allows configuration of detailed attributes such as multilingual names, descriptions, prices, brands, and categories to meet diverse product requirements.Multimedia Support: Supports product images, video links, and other multimedia content to enhance product presentation.",
+    "version": "v1.0.1",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/product/hktv/single/save",
+    "method": "POST",
+    "category": "Product",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}"
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV"
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce"
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "{   \n    \"skuCode\": \"123456\",   \n    \"productCode\": \"123456\",   \n    \"productCategories\": [\n        {\n        \"productCatCode\": \"AA00000000001\"\n        }\n    ],\n    \"primaryCategoryCode\": \"AA00000000001\",\n    \"brandCode\": \"ABC123456\",\n    \"productReadyMethod\": \"MLC\",\n    \"onOfflineStatus\": \"ONLINE\",\n    \"isPrimarySku\": \"N\",\n    \"skuName\": \"x\",   \n    \"skuNameTchi\": \"X\",   \n    \"skuNameZhCN\": \"x\",   \n    \"skuSDescEn\": \"X\",   \n    \"skuSDescCh\": \"X\",   \n    \"skuSDescZhCN\": \"x\",   \n    \"skuLDescEn\": \"x\",   \n    \"skuLDescCh\": \"x\",   \n    \"skuLDescZhCN\": \"x\",   \n    \"mainPhoto\": \"x\",\n    \"otherProductPhoto\": [\n         \"x\",\n         \"x\",\n         \"x\",\n         \"x\"\n         ],\n     \"otherPhoto\": [\n         \"x\",\n         \"x\",\n         \"x\"\n         ],\n    \"advertisingPhoto\": \"x\",\n    \"manuCountry\": \"ABW\",\n    \"currencyCode\": \"RMB\",\n    \"originalPrice\": 30,\n    \"sellingPrice\": 25,\n    \"userMax\": 10,\n    \"style\": \"RED\",\n    \"discountText\": \"Discount Text\",\n    \"discountTextTchi\": \"折扣文字描述\",\n    \"discountTextZhCN\": \"折扣文字描述\",\n    \"barcode\": \"12456\", \n    \"packSpecEn\": \"Packing Spec\",\n    \"packSpecCh\": \"包裝規格\",\n    \"packSpecZhCN\": \"包装规格\",\n    \"packHeight\": 1,\n    \"packLength\": 2,\n    \"packDepth\": 3,\n    \"packDimensionUnit\": \"mm\",\n    \"weight\": 4,\n    \"weightUnit\": \"g\",\n    \"packBoxType\": \"H\",\n    \"cartonHeight\": 5,\n    \"cartonLength\": 6,\n    \"cartonWidth\": 7,\n    \"invisibleFlag\": \"Y\",\n    \"finePrintEn\": \"Fine Print\",\n    \"finePrintCh\": \"條款與細則\",\n    \"finePrintZhCN\": \"条款与细则\",\n    \"invoiceRemarksEn\": \"Invoice Remark\",\n    \"invoiceRemarksCh\": \"發票備註\",\n    \"invoiceRemarksZhCN\": \"发票备注\",\n    \"returnDays\": 7,\n    \"productReadyDays\": \"5\",\n    \"pickupDays\": \"MSU\",\n    \"pickupTimeslot\": \"AM/PM/EV\",\n    \"productOverseaDeliveryList\":[ \n        \"MO\"\n    ],\n    \"minimumShelfLife\": 1,\n    \"externalPlatform\" :{\n            \"source\":[\n                \"TMALL\"\n            ],\n            \"productId\": \"123456\",\n            \"skuId\": \"123465\"\n    },\n    \"colorFamilies\": \"BEIGE\",\n    \"colorEn\": \"_Beige(7229)\", // _Beige(4cm). _Beige(7229)\n    \"sizeSystem\": \"INTL\",\n    \"size\": \"67cm-135cm\", // 67cm-135cm. 53cm-102cm\n    \"field1\": \"power\",\n    \"value1\": \"p0d00\", // p0d00. p0d25\n    \"field2\": \"cyl\",\n    \"value2\": \"c-0d75\", // c-0d75. c-1d00\n    \"field3\": \"axis\",\n    \"value3\": \"a20\",\n    \"videoLink\": \"=ZVRuUV8bTrc\",\n    \"videoLinkEn\": \"Video Text 1\",\n    \"videoLinkCh\": \"影片文本 1\",\n    \"videoLinkZhCN\": \"视频文字 1\",\n    \"videoLink2\": \"=ZVRuUV8bTrc\",\n    \"videoLinkEn2\": \"Video Text 2\",\n    \"videoLinkCh2\": \"影片文本 2\",\n    \"videoLinkZhCN2\": \"视频文字 2\",\n    \"videoLink3\": \"=ZVRuUV8bTrc\",\n    \"videoLinkEn3\": \"Video Text 3\",\n    \"videoLinkCh3\": \"影片文本 3\",\n    \"videoLinkZhCN3\": \"视频文字 3\",\n    \"videoLink4\": \"=ZVRuUV8bTrc\",\n    \"videoLinkEn4\": \"Video Text 4\",\n    \"videoLinkCh4\": \"影片文本 4\",\n    \"videoLinkZhCN4\": \"视频文字 4\",\n    \"videoLink5\": \"=ZVRuUV8bTrc\",\n    \"videoLinkEn5\": \"Video Text 5\",\n    \"videoLinkCh5\": \"影片文本 5\",\n    \"videoLinkZhCN5\": \"视频文字 5\",\n    \"removalServices\": \"Y\",\n    \"warranty\": \"Y\",\n    \"goodsType\": \"authorized goods\",\n    \"warrantyPeriodUnit\": \"Years\",\n    \"warrantyPeriod\": 999,\n    \"warrantySupplierEn\": \"Warranty Supplier\",\n    \"warrantySupplierCh\": \"保養供應商\",\n    \"warrantySupplierZhCN\": \"保养供应商\",\n    \"serviceCentreAddressEn\": \"Service Centre Address\",\n    \"serviceCentreAddressCh\": \"服務中心地址\", \n    \"serviceCentreAddressZhCN\": \"服务中心地址\", \n    \"serviceCentreEmail\": \"TEST@shaolter.com\",\n    \"serviceCentreContact\": \"Service Centre Contact\",\n    \"warrantyRemarkEn\": \"Warranty Remark\",\n    \"warrantyRemarkCh\": \"保養備註\",\n    \"warrantyRemarkZhCN\": \"保养备注\",\n    \"warehouse\": \"H8888881-1\"\n}",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "SUCCESS",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{\n  \"message\": \"Open API single save successful\",\n  \"code\": \"success\",\n  \"data\": {\n    \"skuCode\": \"single_save_oapi_test\",\n    \"status\": \"success\",\n    \"message\": null\n  }\n}"
+      },
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "FAIL",
+          "zh-TW": "失敗",
+          "zh-CN": "失败"
+        },
+        "example": "{\n  \"message\": \"Open API single save failed\",\n  \"code\": \"fail\",\n  \"data\": {\n    \"skuCode\": \"single_save_oapi_test\",\n    \"status\": \"fail\",\n    \"message\": [\n       \"errorMessage1\",\n       \"errorMessage2\"\n    ]\n  }\n}"
+      },
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "The entire request failed. Please check the results and avoid making duplicate API calls.",
+          "zh-TW": "整批請求失敗，請檢查結果並避免重複呼叫 API。",
+          "zh-CN": "整批请求失败，请检查结果并避免重复调用 API。"
+        },
+        "example": "{\n    \"status\": -1,\n    \"data\": null,\n    \"errorMessageList\": [\"Do not repeat the same action: The request has already been successfully submitted and is currently being processed. Please wait for the process to complete.\"],\n    \"fail\": true,\n    \"success\": false\n}"
+      }
+    ]
+  },
+  {
+    "id": "1758854833453",
+    "name": "Batch Edit Product - All Field",
+    "nameTw": "批量編輯商品 - 所有欄位",
+    "description": "The Batch Edit Product - All Field allows users to update product information in bulk, supporting modifications for up to 100 products per request. This API is ideal for efficiently managing large-scale product updates on the HKTV platform, ensuring flexibility and accuracy.Core Features:Bulk Product Updates: Each request supports updating up to 100 products, optimizing operational efficiency for large-scale product management.Selective Field Updates:Fields can be left blank to retain original values.Omitted fields or fields with a&nbsp;null&nbsp;value will remain unchanged.To remove specific data, provide an empty string (\"\") or an empty array ([]).Flexible Configuration: Update multilingual names, descriptions, prices, brands, categories, and other attributes to meet diverse business requirements.Error Handling: Built-in mechanisms validate requests and provide clear feedback for errors, ensuring accurate updates.After submission, the update is asynchronous, and the result must be checked using the&nbsp;Check Product Record API.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/product/hktv/batch/editAll",
+    "method": "POST",
+    "category": "Product",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}"
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV"
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce"
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "Content-Type",
+        "example": "[\n  {\n    \"skuCode\": \"a3\",\n    \"productReadyMethod\": \"N\",\n    \"productCategories\": [\n      {\n        \"productCatCode\": \"AA85302000001\"\n      },\n      {\n        \"productCatCode\": \"AA83202540001\"\n      }\n    ],\n    \"primaryCategoryCode\": \"AA83202540001\",\n    \"brandCode\": \"A2\",\n    \"skuName\": \"2\",\n    \"skuNameTchi\": \"2\",\n    \"skuNameZhCN\": \"2\",\n    \"skuSDescEn\": \"2\",\n    \"skuSDescCh\": \"2\",\n    \"skuSDescZhCN\": \"2\",\n    \"skuLDescEn\": \"1\",\n    \"skuLDescCh\": \"1\",\n    \"skuLDescZhCN\": \"1\",\n    \"userMax\": 0,\n    \"mainPhoto\": \"string\",\n    \"otherProductPhoto\": [\n       \"string\"\n     ],\n    \"otherPhoto\": [\n       \"string\"\n     ],\n    \"advertisingPhoto\": \"string\",\n    \"videoLink\": \"=1\",\n    \"videoLinkEn\": \"1\",\n    \"videoLinkCh\": \"1\",\n    \"videoLinkZhCN\": \"1\",\n    \"videoLink2\": \"string\",\n    \"videoLinkEn2\": \"string\",\n    \"videoLinkCh2\": \"string\",\n    \"videoLinkZhCN2\": \"string\",\n    \"videoLink3\": \"string\",\n    \"videoLinkEn3\": \"string\",\n    \"videoLinkCh3\": \"string\",\n    \"videoLinkZhCN3\": \"string\",\n    \"videoLink4\": \"string\",\n    \"videoLinkEn4\": \"string\",\n    \"videoLinkCh4\": \"string\",\n    \"videoLinkZhCN4\": \"string\",\n    \"videoLink5\": \"string\",\n    \"videoLinkEn5\": \"string\",\n    \"videoLinkCh5\": \"string\",\n    \"videoLinkZhCN5\": \"string\",\n    \"manuCountry\": \"AF\",\n    \"colorFamilies\": \"YELLOW\",\n    \"colorEn\": \"_yellow-green\",\n    \"sizeSystem\": \"INTL\",\n    \"size\": \"S\",\n    \"currencyCode\": \"HKD\",\n    \"originalPrice\": \"1\",\n    \"cost\": null,\n    \"sellingPrice\": \"1\",\n    \"style\": \"RED\",\n    \"discountText\": \"1\",\n    \"discountTextTchi\": \"1\",\n    \"discountTextZhCN\": \"1\",\n    \"packSpecEn\": \"1\",\n    \"packSpecCh\": \"1\",\n    \"packSpecZhCN\": \"1\",\n    \"packHeight\": 1,\n    \"packLength\": 1,\n    \"packDepth\": 1,\n    \"packDimensionUnit\": \"cm\",\n    \"weight\": 1,\n    \"weightUnit\": \"g\",\n    \"packBoxType\": \"H\",\n    \"invisibleFlag\": \"N\",\n    \"barcode\": [ \"123456\", \"456789\",  \"789456\"],\n    \"featureStartTime\": null,\n    \"featureEndTime\": null,\n    \"redeemStartDate\": \"2020-01-01\",\n    \"fixedRedemptionDate\": \"2020-01-01\",\n    \"uponPurchaseDate\": null,\n    \"finePrintEn\": \"1\",\n    \"finePrintCh\": \"1\",\n    \"finePrintZhCN\": \"1\",\n    \"removalServices\": \"N\",\n    \"warranty\": \"string\",\n    \"goodsType\": \"parallel goods\",\n    \"warrantyPeriodUnit\": \"Years\",\n    \"warrantyPeriod\": 1,\n    \"warrantySupplierCh\": \"1\",\n    \"warrantySupplierEn\": \"1\",\n    \"warrantySupplierZhCN\": \"1\",\n    \"serviceCentreAddressEn\": \"1\",\n    \"serviceCentreAddressCh\": \"1\",\n    \"serviceCentreAddressZhCN\": \"1\",\n    \"serviceCentreEmail\": \"1@hktv.com.hk\",\n    \"serviceCentreContact\": \"1\",\n    \"warrantyRemarkEn\": \"1\",\n    \"warrantyRemarkCh\": \"1\",\n    \"warrantyRemarkZhCN\": \"1\",\n    \"invoiceRemarksEn\": \"1\",\n    \"invoiceRemarksCh\": \"1\",\n    \"invoiceRemarksZhCN\": \"1\",\n    \"returnDays\": 0,\n    \"productReadyDays\": \"0\",\n    \"pickupDays\": \"MS\",\n    \"pickupTimeslot\": \"AM\",\n    \"productOverseaDeliveryList\": [\n    \"string\"\n     ],\n    \"minimumShelfLife\": 0,\n    \"onOfflineStatus\": \"ONLINE\",\n    \"warehouse\":\"H8888881-1\"\n  }\n]",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Success",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{ \n  \"message\": \"Open API batch edit successful\", \n  \"code\": \"success\", \n  \"data\": {\n    \"recordId\": 1,\n    \"status\": \"success\", \n    \"message\": null \n  }\n}"
+      },
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "This is the response returned when the batch update operation fails.  No additional API calls are required to query the result; the failure reason is included in this response.",
+          "zh-TW": "這是批量更新操作失敗時返回的回應。  不需要額外呼叫 API 查詢結果，失敗原因已包含在此回應中。",
+          "zh-CN": "这是批量更新操作失败时返回的响应。  不需要额外调用 API 查询结果，失败原因已包含在此响应中。"
+        },
+        "example": "{ \n  \"message\": \"Open API batch edit failed\", \n  \"code\": \"fail\", \n  \"data\": {\n    \"recordId\": null,\n    \"status\": \"fail\", \n    \"message\": [\n       \"error1\",\"error2\"\n    ]\n  }\n}"
+      },
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "The entire request failed. Please check the results and avoid making duplicate API calls.",
+          "zh-TW": "整批請求失敗，請檢查結果並避免重複呼叫 API。",
+          "zh-CN": "整批请求失败，请检查结果并避免重复调用 API。"
+        },
+        "example": "{\n    \"status\": -1,\n    \"data\": null,\n    \"errorMessageList\": [\"Do not repeat the same action: The request has already been successfully submitted and is currently being processed. Please wait for the process to complete.\"],\n    \"fail\": true,\n    \"success\": false\n}"
+      }
+    ]
+  },
+  {
+    "id": "1758855073947",
+    "name": "Get Store Information",
+    "nameTw": "取得店鋪資料",
+    "description": "The Get Store API is used to retrieve detailed store information, including platform details, store names, merchant details, delivery thresholds, and fees.",
+    "version": "v1.0.0",
+    "baseUrl": "https://mms-api.shoalter.com/mmsAdmin",
+    "endpoint": "/oapi/api/store/details",
+    "method": "GET",
+    "category": "Store",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}"
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV"
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce"
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Success",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{\n  \"message\": null,\n  \"code\": \"success\",\n  \"data\": [\n    {\n      \"platformCode\": \"HKTV\",\n      \"storefrontStoreCode\": \"H8888881\",\n      \"storeNameEn\": \"EN\",\n      \"storeNameZh\": \"ZH\",\n      \"storeNameZh\": \"ZHCN\",\n      \"merchantNameEn\": \"hever_m_610\",\n      \"merchantNameZh\": \"hever_m_610\",\n      \"deliveryThreshold\": 2,\n      \"deliveryFee\": 3\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"pageSize\": 20,\n    \"total\": 1\n  }\n}"
+      }
+    ]
+  },
+  {
+    "id": "1758855158210",
+    "name": "Update Store Information",
+    "nameTw": "更新商店資訊",
+    "description": "The Update Store API is used to update store information, including platform details, store names (in multiple languages), merchant delivery thresholds, and delivery fees.",
+    "version": "v1.0.0",
+    "baseUrl": "https://mms-api.shoalter.com/mmsAdmin",
+    "endpoint": "/oapi/api/store",
+    "method": "POST",
+    "category": "Store",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}"
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV"
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce"
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "[\n  {\n    \"platformCode\": \"HKTV\",\n    \"storefrontStoreCode\": \"H8888881\",\n    \"storeNameEn\": \"EN\",\n    \"storeNameZh\": \"ZH\",\n    \"storeNameZhCN\": \"ZHCN\",\n    \"deliveryThreshold\": 2,\n    \"deliveryFee\": 3\n  }\n]",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "SUCCESS",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{\n  \"message\": null,\n  \"code\": \"success\",\n  \"data\": [\n    {\n      \"platformCode\": \"HKTV\",\n      \"storefrontStoreCode\": \"H8888881\",\n      \"status\": \"success\",\n      \"message\": \"H8888881 is updated\"\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"pageSize\": 20,\n    \"total\": 1\n  }\n}"
+      }
+    ]
+  },
+  {
+    "id": "1758855294667",
+    "name": "Get Stock Detail",
+    "nameTw": "取得庫存資料",
+    "description": "The Get Stock Detail API is used to retrieve stock levels and stock status for specific products within a warehouse. The SKU input range for stock levels is 1 to 100.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/inventory/stock/details",
+    "method": "GET",
+    "category": "Inventory",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}"
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV"
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce"
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "[\n  {\n    \"warehouseId\": \"H888888101\",\n    \"productId\": \"H8888881_S_a3\"\n  }\n]",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "contentType": "application/json",
+        "example": "[\n  {\n    \"warehouseId\": null,\n    \"productId\": \"H8888881_S_a3\"\n  }\n]",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "contentType": "application/json",
+        "example": "[\n  {\n    \"productId\": \"H8888881_S_a3\"\n  }\n]",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "contentType": "application/json",
+        "example": "[\n  {\n    \"productId\": \"H8888881_S_a3\"\n  },\n  {\n    \"productId\": \"H8888881_S_a4\"\n  }\n]",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Success",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{\n  \"message\": null,\n  \"code\": \"success\",\n  \"data\": [\n    {\n      \"productId\": \"H8888881_S_a3\",\n      \"instockStatus\": \"\",\n      \"availableToSell\": 10,\n      \"inProcess\": 0\n    }\n  ]\n}"
+      }
+    ]
+  },
+  {
+    "id": "1758860565545",
+    "name": "Update Stock Level",
+    "nameTw": "更新庫存資料",
+    "description": "The Update Stock API is used to update stock levels for specific products in the warehouse. The number of SKUs that can be updated in a single request, which is 1 to 100.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/inventory/stock",
+    "method": "POST",
+    "category": "Inventory",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}"
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV"
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce"
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "[\n    {\n        \"productId\": \"H8888881_S_250422Test_0001\",\n        \"quantity\": 1,\n        \"action\": \"add\"\n    }\n]",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "contentType": "application/json",
+        "example": "[\n    {\n        \"productId\": \"H8888881_S_250422Test_0001\",\n        \"quantity\": 1,\n        \"action\": \"add\"\n    },\n    {\n        \"productId\": \"H8888881_S_250422Test_999\",\n        \"quantity\": 1,\n        \"action\": \"add\"\n    }\n]",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "SUCCESS",
+          "zh-TW": "SUCCESS",
+          "zh-CN": "SUCCESS"
+        },
+        "example": "{\n  \"code\": \"SUCCESS\",\n  \"response\": {\n    \"successList\": [\n      {\n        \"productId\": \"H8888881_S_250422Test_0001\",\n        \"action\": \"ADD\",\n        \"qty\": 1\n      }\n    ],\n    \"failList\": [\n      {\n        \"productId\": \"H8888881_S_250422Test_999\",\n        \"action\": \"ADD\",\n        \"qty\": 1,\n        \"message\": \"Product not found: H8888881_S_250422Test_999. Please check productId in MMS or check productId again.\"\n      }\n    ]\n  }\n}"
+      }
+    ]
+  },
+  {
+    "id": "1758855554063",
+    "name": "Get Order",
+    "nameTw": "查詢訂單",
+    "description": "The Get Order API allows merchants to search for order numbers based on the customer's order date, warehouse check-in date, or delivery date. Each request should include only one type of date condition. For all three types of dates (Order Date, Pickup Date, and Delivery Date), merchants may enter either a single date or a date range. The system will return results according to the specified conditions.Notes:For each query, the start date and end date must be within 90 days.Get Order API can only retrieve order numbers. If merchants wish to view detailed order information, they must use&nbsp;Get Order Detail.Use cases for Get Order API:Retrieve orders based on the customer's order date, refer to Request Body 1Retrieve orders based on the warehouse check-in date, refer to Request Body 1Retrieve orders based on the customer's requested delivery date, refer to Request Body 1",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/order/orders",
+    "method": "GET",
+    "category": "Order",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}"
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV"
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce"
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "{\n  \"orderDateStart\": \"2025-10-01 00:00:00\",\n  \"orderDateEnd\": \"2025-10-31 23:59:59\",\n  \"pageSize\": 5,\n  \"page\": 2\n}",
+        "description": {
+          "en": "If a merchant wants to find orders scheduled for delivery to the HKTVmall warehouse on October 1, they should include the following parameters in the request body:",
+          "zh-TW": "商戶想查詢10/1至10/31的訂單有哪些，便需要在Request body中裡帶入orderDateStart: 2025-10-01 00:00:00 和orderDateEnd: 2025-10-31 23:59:59，即可查詢該時間段內的訂單",
+          "zh-CN": "商户可根据顾客的下单时间获取订单，使用 orderDate 作为查询条件。 示例： 商户想查询 10 月 1 日至 10 月 31 日的订单，可在请求中带入"
+        }
+      },
+      {
+        "contentType": "application/json",
+        "example": "{\n  \"pickupDateStart\": \"2025-10-01 00:00:00\",\n  \"pickupDateEnd\": \"2025-10-01 23:59:59\",\n  \"pageSize\": 5,\n  \"page\": 2\n}",
+        "description": {
+          "en": "Using the warehouse check-in date as the search condition, merchants can specify a date range, and the system will return the order numbers that match the criteria.",
+          "zh-TW": "商戶可依據每日入倉的時間取得訂單，即可使用Pickup date來作為查詢條件。 舉例：商戶想查詢，有哪些訂單應在 10/1 派送至 HKTVmall 倉庫，便需要在 Request body 中裡帶入",
+          "zh-CN": "商户可根据每日入仓时间获取订单，使用 pickupDate 作为查询条件。 示例： 商户想查询哪些订单应在 10 月 1 日派送至 HKTVmall 仓库，可在请求中带入"
+        }
+      },
+      {
+        "contentType": "application/json",
+        "example": "{\n  \"deliveryDateStart\": \"2025-10-01 00:00:00\",\n  \"deliveryDateEnd\": \"2025-10-01 23:59:59\",\n  \"pageSize\": 5,\n  \"page\": 2\n}",
+        "description": {
+          "en": "Using the customer's requested delivery date as the search condition, merchants can specify a date range, and the system will return the order numbers that match the criteria.",
+          "zh-TW": "使用客戶要求的配送日期作為查詢條件，商家可以指定一個日期範圍，系統會返回符合條件的訂單號碼。",
+          "zh-CN": "商户可根据顾客指定的到货时间获取订单，使用 deliveryDate 作为查询条件。 示例： 商户想查询哪些订单应在 10 月 1 日至 10 月 31 日派送至顾客指定地点，可在请求中带入"
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "SUCCESS",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{\n  \"message\": \"\",\n  \"code\": \"success\",\n  \"data\": {\n    \"subOrderNumbers\": [\n      \"H202518121852-H8888881\",\n      \"H202518121855-H8888881\",\n      \"H202518121859-H8888881\",\n      \"H202518121848-H8888881\",\n      \"H202518121261-H8888881\"\n    ]\n  },\n  \"pagination\": {\n    \"page\": 1,\n    \"pageSize\": 5,\n    \"total\": 150\n  }\n}"
+      }
+    ]
+  },
+  {
+    "id": "1758855554064",
+    "name": "Get Order Detail",
+    "nameTw": "查詢訂單詳情",
+    "description": "The Get Order Detail API allows merchants to retrieve detailed order information based on subOrderNumbers (sub-order numbers), including product information, waybill number, order date, warehouse check-in date, delivery date, and more. Each request can query up to 300 sub-order numbers at a time.Notes:subOrderNumbers can be obtained from the Get Order API.trackingId refers to the Waybill Number, which may change due to HKTVmall’s warehouse handling process.consignmentCode is the unique identifier for each sub-order. Once created when the waybill is generated, it will never change. Therefore, merchants who need to track shipment progress can use the consignmentCode as the tracking reference.consignmentStatus represents the Waybill Status.recipientName, contactPhoneNumber, and deliveryAddress apply only to merchant delivery.When a customer adds products to the shopping cart, the HKTVmall system generates a transactionId, which applies only to merchants under special contracts.totalPrice equals SKU selling price × selling quantity, and the total amount does not include discounts.mainlandCourierTrackingNumber and mainlandCourierCompanyName apply only to Mainland merchants.",
+    "version": "v1.1.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/order/details",
+    "method": "GET",
+    "category": "Order",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}"
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8220001",
+          "zh-TW": "e.g. H8220001",
+          "zh-CN": "e.g. H8220001"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV"
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce"
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "{\n   \"subOrderNumbers\":[\n      \"H250212003003-H1234567\"\n   ]\n}",
+        "description": {
+          "en": "Single search at a Time",
+          "zh-TW": "一次單個搜索",
+          "zh-CN": "一次单个搜索"
+        }
+      },
+      {
+        "contentType": "application/json",
+        "example": "{\n   \"subOrderNumbers\":[\n      \"H250108004011-H1234567\",\n      \"H250108004034-H1234567\",\n      \"H250203002042-H1234567\"\n   ]\n}",
+        "description": {
+          "en": "Multiple Searches at a Time",
+          "zh-TW": "一次多個搜索",
+          "zh-CN": "一次多个搜索"
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Success",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{\n    \"message\": \"success\",\n    \"code\": \"success\",\n    \"data\": {\n        \"successList\": [\n            {\n                \"consignmentCode\": \"5533727\",\n                \"trackingId\": \"4005337275\",\n                \"transactionId\": \"15481123719086096-51219011_20251224093027\",\n                \"orderDate\": \"2025-12-24 09:30:28.0\",\n                \"consignmentStatus\": \"CONFIRMED\",\n                \"orderId\": \"H251224001003-H1234567\",\n                \"pickUpDate\": \"2098-01-01 11:00:00.0\",\n                \"deliveryDate\": \"2098-01-01 14:00:00.0\",\n                \"deliveryMethod\": \"merchant-delivery\",\n                \"recipientName\": \"hello_customer\",\n                \"contactPhoneNumber\": \"22221428\",\n                \"deliveryAddress\": \"香港, 半山, 天匯, 側\",\n                \"consignmentEntries\": [\n                    {\n                        \"skuId\": \"H1234567_S_A002\",\n                        \"skuNameEn\": \"A002\",\n                        \"skuNameZh\": \"A002\",\n                        \"brand\": \"黑橋牌\",\n                        \"quantity\": \"2\",\n                        \"totalPrice\": \"700.0\",\n                        \"pk\": null\n                    }\n                ],\n                \"warehouseId\": \"H123456709\",\n                \"deliverToWarehouse\": \"青衣 9/F\",\n                \"mainlandCourierTrackingNumber\": null,\n                \"mainlandCourierCompanyName\": null,\n                \"message\": null\n            },\n        ],\n        \"failList\": []\n    },\n    \"pagination\": {\n        \"page\": 1,\n        \"pageSize\": 6,\n        \"total\": 6\n    }\n}"
+      },
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Partial Failure",
+          "zh-TW": "部分失敗",
+          "zh-CN": "部分失败"
+        },
+        "example": "{\n  \"message\": \"Partial failure occurred while retrieving orders.\",\n  \"code\": \"fail\",\n  \"data\": {\n    \"successList\": [\n      {\n        \"consignmentCode\": \"5454005\",\n        \"trackingId\": \"4004540054\",\n        \"orderDate\": \"2025-02-03 16:22:06.0\",\n        \"consignmentStatus\": \"CONFIRMED\",\n        \"orderId\": \"H250203002042-H1234567\",\n        \"transactionId\": \"15481123719086096-32071166_20210914101606\",\n        \"pickUpDate\": \"2098-01-01 11:00:00.0\",\n        \"deliveryDate\": \"2098-01-01 14:00:00.0\",\n        \"deliveryMethod\": \"merchant-delivery\",\n        \"recipientName\": \"hello_customer \",\n        \"contactPhoneNumber\": \"62958451\",\n        \"deliveryAddress\": \"香港, 半山, 天匯, 1F\",\n        \"consignmentEntries\": [\n          {\n            \"skuId\": \"H1234567_S_LT-INS-001-Ginseng\",\n            \"skuNameEn\": \"Ginseng body insurance\",\n            \"skuNameZh\": \"給人參的人參保險\",\n            \"brand\": \"富衛保險\",\n            \"quantity\": \"2\",\n            \"totalPrice\": \"200.0\"\n          }\n        ],\n        \"warehouseId\": \"H123456709\",\n        \"deliverToWarehouse\": \"青衣 9/F\",\n        \"mainlandCourierTrackingNumber\": null,\n        \"mainlandCourierCompanyName\": null,\n        \"message\": null\n      }\n    ],\n    \"failList\": [\n      {\n        \"orderId\": \"H250203002042-H1234567\",\n        \"consignmentCode\": \"5454005\"\n      },\n      {\n        \"orderId\": \"H250203002043-H1234567\",\n        \"consignmentCode\": \"5454006\"\n      }\n    ]\n  },\n  \"pagination\": {\n    \"page\": 1,\n    \"pageSize\": 1,\n    \"total\": 1\n  }\n}"
+      },
+      {
+        "statusCode": "400",
+        "description": {
+          "en": "Fully Failure",
+          "zh-TW": "整筆失敗",
+          "zh-CN": "整笔失败"
+        },
+        "example": "{\n    \"message\": \"Unable to get results from requests. Try again or contact support.\",\n    \"code\": \"fail\",\n    \"data\": null,\n    \"pagination\": {\n        \"page\": null,\n        \"pageSize\": null,\n        \"total\": null\n    }\n}"
+      }
+    ]
+  },
+  {
+    "id": "1758855701322",
+    "name": "Update Order Status",
+    "nameTw": "更新訂單狀態",
+    "description": "The Update Order Status API allows merchants to update the delivery status of their orders. It supports updating either a single order or multiple orders, with a maximum of 100 orders per request.In the MMS system, the available order status options that merchants can update are as follows:ACKNOWLEDGED: The merchant confirms that the order is ready for shipment. This status is optional and can be used based on the merchant's business needs.PICKED: The merchant has completed product packaging and confirmed that the goods will be sent to the HKTVmall warehouse.RECEIVED_BY_CUSTOMER: The customer has received the goods and completed the acknowledgment process.Notes:If the delivery method is Standard Delivery or Non-Standard Delivery, the order status can be updated to: ACKNOWLEDGED, PICKED.If the delivery method is Merchant Delivery, the order status can be updated to: ACKNOWLEDGED, RECEIVED_BY_CUSTOMER.If the delivery method is Third-Party Logistics (3PL), no status update is required.When an order status is updated to RECEIVED_BY_CUSTOMER, it indicates that the order cycle is complete. The system will automatically change the status to ORDER_COMPLETED after 7 days.If the merchant is unable to ship the order for any reason, the Cancel Order API must be used to cancel the order.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/order/updateOrderStatus",
+    "method": "POST",
+    "category": "Order",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}"
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV"
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce"
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "[\n  {\n    \"orderNumber\": \"H141209002005-H8888881\",\n    \"trackingId\": \"4001882233\",\n    \"status\": \"ACKNOWLEDGED\"\n  }\n]",
+        "description": {
+          "en": "Update the status of single order",
+          "zh-TW": "更新單筆訂單狀態",
+          "zh-CN": "更新单笔订单状态"
+        }
+      },
+      {
+        "contentType": "application/json",
+        "example": "[\n  {\n    \"orderNumber\": \"H141209002005-H8888881\",\n    \"trackingId\": \"4001882233\",\n    \"status\": \"ACKNOWLEDGED\"\n  },\n  {\n    \"orderNumber\": \"H141209002005-H8888881\",\n    \"trackingId\": \"4001882234\",\n    \"status\": \"ACKNOWLEDGED\"\n  }\n]",
+        "description": {
+          "en": "Update the status of multiple orders at once",
+          "zh-TW": "一次更新多筆訂單狀態",
+          "zh-CN": "一次更新多笔订单状态"
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Successfully updated the status of a single order",
+          "zh-TW": "成功更新單筆訂單狀態",
+          "zh-CN": "成功更新单笔订单状态"
+        },
+        "example": "{\n    \"message\": \"success\",\n    \"code\": \"success\",\n    \"data\": {\n        \"successList\": [\n            {\n                \"orderNumber\": \"H141209002005-H8888881\",\n                \"waybillNumber\": \"4001882233\",\n                \"successCode\": \"FROM_HYBRIS_SYSTEM\",\n                \"status\": \"ACKNOWLEDGED\"\n            }\n        ],\n        \"failList\": []\n    },\n    \"pagination\": {\n        \"page\": null,\n        \"pageSize\": null,\n        \"total\": null\n    }\n}"
+      },
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Successfully updated the status of multiple orders",
+          "zh-TW": "成功更新多筆訂單狀態",
+          "zh-CN": "成功更新多笔订单状态"
+        },
+        "example": "{\n    \"message\": \"success\",\n    \"code\": \"success\",\n    \"data\": {\n        \"successList\": [\n            {\n                \"orderNumber\": \"H251103001010-H8888881\",\n                \"waybillNumber\": \"4005197888\",\n                \"successCode\": \"FROM_HYBRIS_SYSTEM\",\n                \"status\": \"ACKNOWLEDGED\"\n            },\n            {\n                \"orderNumber\": \"H251105001047-H8888881\",\n                \"waybillNumber\": \"4005203676\",\n                \"successCode\": \"FROM_HYBRIS_SYSTEM\",\n                \"status\": \"ACKNOWLEDGED\"\n            }\n        ],\n        \"failList\": []\n    },\n    \"pagination\": {\n        \"page\": null,\n        \"pageSize\": null,\n        \"total\": null\n    }\n}"
+      }
+    ]
+  },
+  {
+    "id": "1758855871211",
+    "name": "Cancel Order",
+    "nameTw": "取消訂單",
+    "description": "The Cancel Order API allows merchants to cancel one or multiple orders, supporting batch cancellation. Each request can cancel between 1 and 100 orders.Notes:When a merchant cancels an order, the order status will be updated to Cancelled, and the system will trigger the force out-of-stock mechanism. Inventory adjustments must be made in the stock settings.Once an order is cancelled, it cannot be restored.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/order/cancel",
+    "method": "POST",
+    "category": "Order",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}"
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8220001",
+          "zh-TW": "e.g. H8220001",
+          "zh-CN": "e.g. H8220001"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV"
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce"
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "[\n   {\n      \"orderNumber\":\"H250424000078-B1316001\",\n      \"trackingId\":\"7144218492\",\n   }\n]",
+        "description": {
+          "en": "Full Cancellation",
+          "zh-TW": "整筆取消",
+          "zh-CN": "整筆取消"
+        }
+      },
+      {
+        "contentType": "application/json",
+        "example": "[\n   {\n      \"orderNumber\":\"H250424000078-B1316001\",\n      \"trackingId\":\"7144218492\",\n      \"entries\":[\n         {\n            \"productCode\":\"B1316001_S_StandardDelivery_MtoW_002\",\n            \"quantity\": \"1\"\n         }\n      ]\n   }\n]",
+        "description": {
+          "en": "Partial Cancellation",
+          "zh-TW": "部分取消",
+          "zh-CN": "部分取消"
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "SUCCESS",
+          "zh-TW": "SUCCESS",
+          "zh-CN": "SUCCESS"
+        },
+        "example": "{\n  \"code\": \"SUCCESS\",\n  \"response\": {\n    \"successList\": [\n      {\n        \"orderNumber\": \"H250407001003-H9492001\",\n        \"waybillNumber\": \"4004688808\",\n        \"successCode\": \"FROM_HYBRIS_SYSTEM\",\n        \"status\": \"CANCELLED\"\n      }\n    ],\n    \"failList\": []\n  }\n}"
+      }
+    ]
+  },
+  {
+    "id": "1758855987164",
+    "name": "Split Waybill",
+    "nameTw": "拆分運單",
+    "description": "The Split Waybill API allows merchants to split waybills associated with an order.Notes:Splitting is only allowed when the number of items in the order is greater than two.Batch waybill splitting is not supported.Once a waybill is split, it cannot be reverted.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/order/splitWaybills",
+    "method": "POST",
+    "category": "Order",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}"
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV"
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce"
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "{\n    \"waybillNumber\": \"4004704530\",\n    \"entries\": [\n        {\n            \"productCode\": \"H8888881_S_10011014\",\n            \"quantity\": 4\n        }\n    ]\n}",
+        "description": {
+          "en": "Single transaction at a time",
+          "zh-TW": "一次單筆",
+          "zh-CN": "一次单笔"
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "SUCCESS",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{\n    \"code\": \"SUCCESS\",\n    \"response\": {\n        \"data\": [\n            \"4004704530\", // waybill number\n            \"5470453\",    // consignmentCode\n            \"4004704530-1\", //the waybill number that been split out\n            \"5470624\" //the consignmentCode of the waybill that been split out\n        ]\n    }\n}"
+      }
+    ]
+  },
+  {
+    "id": "1758856126246",
+    "name": "Print Waybill ",
+    "nameTw": "列印運單",
+    "description": "The Print Waybill API allows merchants to print waybills that have not yet been shipped, with a maximum of 300 waybills per request.Notes:The API response is returned in HTML format, which already complies with HKTVmall's waybill layout requirements. Therefore, merchants need to have their engineers convert the HTML format into a visualized UI for viewing.The waybill supports the following size formats and content options:A5Label (waybill only)Label (with product list)Due to the waybill format settings and the number of products included in a waybill, the document may contain more than one page. Merchants should check their own system's print settings to ensure that no product details are omitted.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/order/printWaybills/html",
+    "method": "POST",
+    "category": "Order",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}"
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8220001",
+          "zh-TW": "e.g. H8220001",
+          "zh-CN": "e.g. H8220001"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV"
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce"
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "{\n    \"waybill\": \"4004712041\",\n    \"suborderNumbers\": \"H250417007024-C0539001\",\n    \"paperSize\": \"A5\"\n}",
+        "description": {
+          "en": "Single transaction at a time",
+          "zh-TW": "一次單筆",
+          "zh-CN": "一次单笔"
+        }
+      },
+      {
+        "contentType": "application/json",
+        "example": "{\n    \"waybill\": \"4004712041,4004712042\",\n    \"suborderNumbers\": \"H250417007024-C0539001,H250417007025-C0539001\",\n    \"paperSize\": \"A5\"\n}",
+        "description": {
+          "en": "Multiple transactions at a time",
+          "zh-TW": "一次多筆",
+          "zh-CN": "一次多笔"
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Success",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{\n    \"message\": null,\n    \"code\": \"success\",\n    \"Data\": “<html>”,\n    \"pagination\": {\n        \"page\": null,\n        \"pageSize\": null,\n        \"total\": null\n    }\n}"
+      }
+    ]
+  },
+  {
+    "id": "1758856207584",
+    "name": "Update Merchant Delivery Info",
+    "nameTw": "更新商家配送資訊",
+    "description": "The Update Merchant Delivery Info API allows merchants to update waybill information for orders with the Merchant Delivery shipping method.Notes:This API is only applicable to waybills with the Merchant Delivery method. It does not apply to Standard Delivery or Non-Standard Delivery.The deliveryBy field should be set to \"merchant_inhub\" or \"hktv_pickup\" only if the merchant has signed a contract to use HKTV's last-mile delivery service.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/order/updateMerchantDeliveryInfo",
+    "method": "POST",
+    "category": "Order",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}"
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV"
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce"
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "[\n {\n   \"deliveryDate\": \"2025-02-12 10:59:54\",\n   \"referenceNumber\": \"SF-123345\",\n   \"remarks\": “Delivery to 5th floor”,\n   \"dateContactedCustomer\": “2025-02-12 10:59:54\",\n   \"deliveryBy\": \"merchant_inhub\",\n   \"subOrderNumber\": \"H250109003005-H8888881\",\n   \"trackingId\": \"593599783\",\n   \"expectedPickupDate\": \"2025-02-12\"\n }\n]",
+        "description": {
+          "en": "Single transaction at a time",
+          "zh-TW": "一次單筆",
+          "zh-CN": "一次单笔"
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "SUCCESS",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{\n   \"Message\":null,\n   \"Code\":\"success\",\n   \"Data\":null,\n   \"Pagination\":{\n      \"Page\":1,\n      \"pageSize\":0,\n      \"Total\":0\n   }\n}\n"
+      }
+    ]
+  },
+  {
+    "id": "1758856372083",
+    "name": "Get Return Request Orders",
+    "nameTw": "退貨、退款或換貨訂單查詢",
+    "description": "The Get Return Request Orders API allows merchants to retrieve orders in which customers have requested a return, refund, or replacement within a specified time range.Notes:This API is only applicable to Standard Delivery. It does not apply to Merchant Delivery or Non-Standard Delivery.The time range for each query request must not exceed 7 days.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/order/returnEntries",
+    "method": "GET",
+    "category": "Order",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}"
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV"
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce"
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "{\n    \"merchantCode\": \"H8888881\",\n    \"productCode\": \"H8888881_S_10012002\",\n    \"orderId\": \"H251023000033\",\n    \"dateFrom\": \"2025-11-01 00:00:00\",\n    \"dateTo\": \"2025-11-07 00:00:00\",\n    \"hasImage\": \"true\",\n    \"status\": \"all\",\n    \"currentPage\": \"1\",\n    \"pageSize\": \"10\"\n}",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Success",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{\n    \"message\": \"success\",\n    \"code\": \"success\",\n    \"data\": [\n        {\n            \"reportDate\": \"2024-08-01 17:55\",\n            \"orderId\": \"H240801001153\",\n            \"productCode\": \"H8888881_S_10012099\",\n            \"productName\": \"CP - test_日式雞肉餃子(急凍)\",\n            \"quantity\": \"1\",\n            \"needReturn\": \"true\",\n            \"status\": \"ACCEPTED_BY_HKTV\",\n            \"responsibility\": \"HKTV\",\n            \"customerName\": \"Kenneth test Cheng\",\n            \"returnOption\": \"refundWithReturn\",\n            \"reportReason\": \"WRONG\",\n            \"returnDescription\": \"\",\n            \"uploadedPhotos\": [\n                \"\"\n            ],\n            \"returnEntryPk\": \"8890825562626\",\n            \"merchantToCsRemark\": null,\n            \"returnRequestId\": \"R02871001-B001\",\n            \"returnRequestType\": \"Refund\",\n            \"replacementOrderNumber\": \"\",\n            \"merchantCsReturnMessage\": []\n        },\n        {\n            \"reportDate\": \"2024-08-01 18:04\",\n            \"orderId\": \"H240801001164\",\n            \"productCode\": \"H8888881_S_10008704\",\n            \"productName\": \"聖碧濤 - 12345 意大利天然有汽礦泉水 (原箱) 12345\",\n            \"quantity\": \"1\",\n            \"needReturn\": \"true\",\n            \"status\": \"ACCEPTED_BY_HKTV\",\n            \"responsibility\": \"HKTV\",\n            \"customerName\": \"Kenneth test Cheng\",\n            \"returnOption\": \"refundWithReturn\",\n            \"reportReason\": \"WRONG\",\n            \"returnDescription\": \"\",\n            \"uploadedPhotos\": [\n                \"\"\n            ],\n            \"returnEntryPk\": \"8890825726466\",\n            \"merchantToCsRemark\": null,\n            \"returnRequestId\": \"R02871003-B001\",\n            \"returnRequestType\": \"Refund\",\n            \"replacementOrderNumber\": \"\",\n            \"merchantCsReturnMessage\": []\n        }\n    ],\n    \"pagination\": {\n        \"page\": 1,\n        \"pageSize\": 20,\n        \"total\": 2\n    }\n}"
+      }
+    ]
+  },
+  {
+    "id": "1762419527905",
+    "name": "Upload Mainland Parcel Info",
+    "nameTw": "上傳大陸物流包裹信息",
+    "description": "The Upload Mainland Parcel Info API allows Mainland China merchants to upload Mainland waybill numbers and the names of Mainland logistics companies.Notes:This API is only applicable to Standard Delivery where the Product Ready Method is Mainland Consolidation. It does not apply to Merchant Delivery or Non-Standard Delivery.Due to system recognition requirements, the mainlandCourierTrackingNumber field only allows English letters (uppercase and lowercase), Arabic numerals, and hyphens (-), with a maximum length of 30 characters.If the merchant delivers goods to the HKTVmall warehouse by themselves, both mainlandCourierTrackingNumber and mainlandCourierCompanyName should be entered as None.Batch uploads are supported, with up to 100 waybills per request.The results of mainlandCourierTrackingNumber and mainlandCourierCompanyName should check GetOrderDetail response.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/order/uploadMainlandParcelInfo",
+    "method": "POST",
+    "category": "Order",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "[\n    {\n        \"waybillNumber\": \"4004946707\",\n        \"mainlandCourierTrackingNumber\": “SGX-123456\",\n        \"mainlandCourierCompanyName\": “中通快递”\n    },\n    {\n        \"waybillNumber\": \"7503552473\",\n        \"mainlandCourierTrackingNumber\": \"SF123456789\",\n        \"mainlandCourierCompanyName\": \"中通快递\"\n    }\n]",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "All successful",
+          "zh-TW": "全部成功",
+          "zh-CN": "全部成功"
+        },
+        "example": "{\n    \"message\": success,\n    \"code\": \"success\",\n    \"data\": {\n        \"successList\": [\n            {\n                \"waybillNumber\": \"4004946707\", \"4004946708\",\n                \"message\": null\n            }\n        ],\n        \"failList\": []\n    },\n    \"pagination\": {\n        \"page\": null,\n        \"pageSize\": null,\n        \"total\": null\n    }\n}"
+      },
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Partially successful, partially failed",
+          "zh-TW": "部分成功部分失敗",
+          "zh-CN": "部分成功部分失败"
+        },
+        "example": "{\n    \"message\": partial failure,\n    \"code\": \"success\",\n    \"data\": {\n        \"successList\": [\n            {\n                \"waybillNumber\": \"4004946707\",\n                \"message\": null\n            }\n        ],\n        \"failList\": [\n            {\n                \"waybillNumber\": \"7503552473\",\n                \"message\": \"Waybill not found.\"\n            }\n        ]\n    },\n    \"pagination\": {\n        \"page\": null,\n        \"pageSize\": null,\n        \"total\": null\n    }\n}"
+      }
+    ]
+  },
+  {
+    "id": "1761561980285",
+    "name": "Query Product Update Result",
+    "nameTw": "查詢產品編輯結果",
+    "description": "The Query Product Update Result API is used to retrieve the result of product update records based on the recordIds returned by other APIs.Input Range: 1 ~ 100Applicable API:Batch Edit Product - All FieldBatch Edit Product - PriceBatch Edit Product - Product Ready Day",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/product/hktv/record/status",
+    "method": "GET",
+    "category": "Product",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Success",
+          "zh-TW": "Success",
+          "zh-CN": "Success"
+        },
+        "example": "{\n    \"message\": null,\n    \"code\": \"success\",\n    \"data\": [\n        {\n            \"recordId\": 60535,\n            \"status\": \"FAIL\",\n            \"rows\": [\n                {\n                    \"status\": \"FAIL\",\n                    \"uuid\": null,\n                    \"skuId\": \"X123465\",\n                    \"errorMessage\": \"Store warehouse doesn't exist, \\nInput Product Ready Method isn''t available to this store, \\nCannot find any matches contract terms.\"\n                }\n            ]\n        },\n        {\n            \"recordId\": 60536,\n            \"status\": \"SUCCESS\",\n            \"rows\": [\n                {\n                    \"status\": \"SUCCESS\",\n                    \"uuid\": \"78ded184-58e1-472f-b892-e6b816cf05c5\",\n                    \"skuId\": \"X123465\",\n                    \"errorMessage\": null\n                }\n            ]\n        }\n    ]\n}"
+      }
+    ]
+  },
+  {
+    "id": "1762331350408",
+    "name": "Search Product by Time with Pagination",
+    "nameTw": "按時間搜尋商品並支持分頁",
+    "description": "This API is used to retrieve updated SKU information based on a time range.Time Range: Optionally input&nbsp;updateTimeFrom&nbsp;and&nbsp;updateTimeTo&nbsp;as filter criteria.Without Time Range: If no time range is provided, all SKU data will be returned.Pagination: A maximum of 100 records per page can be returned, with a default of 10 records per page.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/product/hktv/products/queryByTime",
+    "method": "GET",
+    "category": "Product",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Success",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{\n  \"message\": null,\n  \"code\": \"success\",\n  \"data\": [\n    {\n      \"createdBy\": \"hever_m_610@hktv.com.hk\",\n      \"createdDate\": \"2021-08-18\",\n      \"lastUpdatedBy\": \"SYSTEM\",\n      \"lastUpdatedDate\": \"2021-09-10\",\n      \"platformCode\": \"HKTV\",\n      \"storefrontStoreCode\": \"H8888881\",\n      \"fullSkuCode\": \"H8888881_S_a1\",\n      \"productCode\": \"a1\",\n      \"skuCode\": \"a1\",\n      \"skuName\": \"1\",\n      \"skuNameTchi\": \"1\",\n      \"primaryCategoryCode\": \"AA13408000001\",\n      \"skuSDescEn\": \"1\",\n      \"skuSDescCh\": \"1\",\n      \"skuSDescZhCN\": \"1\",\n      \"skuLDescEn\": \"1\",\n      \"skuLDescCh\": \"1\",\n      \"skuLDescZhCN\": \"1\",\n      \"invoiceRemarksEn\": \"1\",\n      \"invoiceRemarksCh\": \"1\",\n      \"invoiceRemarksZhCN\": \"1\",\n      \"videoLink\": null,\n      \"videoLinkEn\": \"1\",\n      \"videoLinkCh\": \"1\",\n      \"videoLinkZhCN\": \"1\",\n      \"barcode\": \"1\",\n      \"brandCode\": \"A1\",\n      \"manuCountry\": \"AF\",\n      \"weight\": 1,\n      \"weightUnit\": \"g\",\n      \"packHeight\": 1,\n      \"packLength\": 1,\n      \"packDepth\": 1,\n      \"packDimensionUnit\": \"cm\",\n      \"packBoxType\": \"L\",\n      \"packSpecEn\": \"1\",\n      \"packSpecCh\": \"1\",\n      \"packSpecZhCN\": \"1\",\n      \"currencyCode\": \"HKD\",\n      \"originalPrice\": 1,\n      \"sellingPrice\": null,\n      \"mallDollar\": 0,\n      \"mallDollarVip\": 0,\n      \"productReadyMethod\": \"N\",\n      \"deliveryMethod\": \"hktv-standard-delivery\",\n      \"returnDays\": 0,\n      \"productReadyDays\": 2,\n      \"pickupDays\": \"MS\",\n      \"pickupTimeslot\": \"AM\",\n      \"colorEn\": \"_Beige(7229)\",\n      \"colorCh\": \"杏色(7229)\",\n      \"sizeSystem\": \"INTL\",\n      \"size\": \"S\",\n      \"invisibleFlag\": \"N\",\n      \"colorFamilies\": \"BLACK\",\n      \"featureStartTime\": \"2020-01-01\",\n      \"featureEndTime\": \"2020-01-01\",\n      \"voucherType\": null,\n      \"voucherDisplayType\": null,\n      \"userMax\": null,\n      \"redeemStartDate\": \"2020-01-01\",\n      \"urgent\": null,\n      \"expiryType\": null,\n      \"fixedRedemptionDate\": null,\n      \"uponPurchaseDate\": 1,\n      \"finePrintEn\": \"1\",\n      \"finePrintCh\": \"1\",\n      \"finePrintZhCN\": \"1\",\n      \"cost\": null,\n      \"removalServices\": \"N\",\n      \"field1\": null,\n      \"value1\": null,\n      \"field2\": null,\n      \"value2\": null,\n      \"field3\": null,\n      \"value3\": null,\n      \"discountText\": null,\n      \"discountTextTchi\": null,\n      \"discountTextZhCN\": null,\n      \"style\": null,\n      \"goodsType\": \"parallel goods\",\n      \"warrantyPeriodUnit\": \"Years\",\n      \"warrantyPeriod\": 1,\n      \"warrantySupplierCh\": \"1\",\n      \"warrantySupplierEn\": \"1\",\n      \"warrantySupplierZhCN\": \"1\",\n      \"serviceCentreAddressCh\": \"1\",\n      \"serviceCentreAddressEn\": \"1\",\n      \"serviceCentreAddressZhCN\": \"1\",\n      \"serviceCentreEmail\": \"1@hktv.com.hk\",\n      \"serviceCentreContact\": \"1\",\n      \"warrantyRemarkEn\": \"1\",\n      \"warrantyRemarkCh\": \"1\",\n      \"warrantyRemarkZhCN\": \"1\",\n      \"onOfflineStatus\": \"ONLINE\",\n      \"productCategories\": [\n        {\n          \"name\": \"AA13408000001 - Medical Equipment\",\n          \"productCatCode\": \"AA13408000001\",\n          \"productCatName\": \"Medical Equipment\"\n        }\n      ],\n      \"imagesMainPhotoList\": [\n        {\n          \"fileName\": \"a1_compress_KAzrySpiOb_20210818120505_01.jpg\",\n          \"imageType\": \"main\",\n          \"filePath\": \"https://mmstest-images.hkmpcl.com.hk/images/HKTV/100239/a1_compress_KAzrySpiOb_20210818 120505_01.jpg\"\n        }\n      ],\n      \"imagesProductPhotoList\": null,\n      \"imagesOtherPhotoList\": null,\n      \"imagesAdvertisingList\": null,\n      \"commissionRate\": null,\n      \"brandNameEn\": \"A1\",\n      \"brandNameTc\": \"A1\",\n      \"isPrimarySku\": \"Y\",\n      \"storeLandMarkFlag\": \"N\"\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"total\": 1,\n    \"totalPages\": 5\n  }\n}"
+      },
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Fail",
+          "zh-TW": "失敗",
+          "zh-CN": "失敗"
+        },
+        "example": "{\n    \"message\": \"\",\n    \"code\": \"fail\",\n    \"data\": null\n}"
+      }
+    ]
+  },
+  {
+    "id": "1762331739511",
+    "name": "Search Product by Product ID",
+    "nameTw": "按產品編號搜尋商品",
+    "description": "This API is used to retrieve SKU information based on Product ID.Multiple Product ID Query: Supports querying multiple&nbsp;productCode&nbsp;at once.Pagination: Allows defining the number of records per page (pageSize), with a maximum of 100.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/product/hktv/products/queryByProductCode",
+    "method": "POST",
+    "category": "Product",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "{\n  \"page\": 1,\n  \"pageSize\": 10,\n  \"productCode\":[\"a1\",\"b2\"]\n}",
+        "description": {
+          "en": "Search Multiple Products by Product Codes",
+          "zh-TW": "一次多個商品編號查詢",
+          "zh-CN": "一次多个商品编号查询"
+        }
+      },
+      {
+        "contentType": "application/json",
+        "example": "{\n  \"page\": 1,\n  \"pageSize\": 10,\n  \"productCode\":[\"a1\"]\n}",
+        "description": {
+          "en": "Single Query at a Time",
+          "zh-TW": "一次單個查詢",
+          "zh-CN": "一次单个查询"
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Success",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{\n  \"message\": null,\n  \"code\": \"success\",\n  \"data\": [\n    {\n      \"createdBy\": \"hever_m_610@hktv.com.hk\",\n      \"createdDate\": \"2021-08-18\",\n      \"lastUpdatedBy\": \"SYSTEM\",\n      \"lastUpdatedDate\": \"2021-09-10\",\n      \"platformCode\": \"HKTV\",\n      \"storefrontStoreCode\": \"H8888881\",\n      \"fullSkuCode\": \"H8888881_S_a1\",\n      \"productCode\": \"a1\",\n      \"skuCode\": \"a1\",\n      \"skuName\": \"1\",\n      \"skuNameTchi\": \"1\",\n      \"primaryCategoryCode\": \"AA13408000001\",\n      \"skuSDescEn\": \"1\",\n      \"skuSDescCh\": \"1\",\n      \"skuSDescZhCN\": \"1\",\n      \"skuLDescEn\": \"1\",\n      \"skuLDescCh\": \"1\",\n      \"skuLDescZhCN\": \"1\",\n      \"invoiceRemarksEn\": \"1\",\n      \"invoiceRemarksCh\": \"1\",\n      \"invoiceRemarksZhCN\": \"1\",\n      \"videoLink\": null,\n      \"videoLinkEn\": \"1\",\n      \"videoLinkCh\": \"1\",\n      \"videoLinkZhCN\": \"1\",\n      \"barcode\": \"1\",\n      \"brandCode\": \"A1\",\n      \"manuCountry\": \"AF\",\n      \"weight\": 1,\n      \"weightUnit\": \"g\",\n      \"packHeight\": 1,\n      \"packLength\": 1,\n      \"packDepth\": 1,\n      \"packDimensionUnit\": \"cm\",\n      \"packBoxType\": \"L\",\n      \"packSpecEn\": \"1\",\n      \"packSpecCh\": \"1\",\n      \"packSpecZhCN\": \"1\",\n      \"currencyCode\": \"HKD\",\n      \"originalPrice\": 1,\n      \"sellingPrice\": null,\n      \"mallDollar\": 0,\n      \"mallDollarVip\": 0,\n      \"productReadyMethod\": \"N\",\n      \"deliveryMethod\": \"hktv-standard-delivery\",\n      \"returnDays\": 0,\n      \"productReadyDays\": 2,\n      \"pickupDays\": \"MS\",\n      \"pickupTimeslot\": \"AM\",\n      \"colorEn\": \"_Beige(7229)\",\n      \"colorCh\": \"杏色(7229)\",\n      \"sizeSystem\": \"INTL\",\n      \"size\": \"S\",\n      \"invisibleFlag\": \"N\",\n      \"colorFamilies\": \"BLACK\",\n      \"featureStartTime\": \"2020-01-01\",\n      \"featureEndTime\": \"2020-01-01\",\n      \"voucherType\": null,\n      \"voucherDisplayType\": null,\n      \"userMax\": null,\n      \"redeemStartDate\": \"2020-01-01\",\n      \"urgent\": null,\n      \"expiryType\": null,\n      \"fixedRedemptionDate\": null,\n      \"uponPurchaseDate\": 1,\n      \"finePrintEn\": \"1\",\n      \"finePrintCh\": \"1\",\n      \"finePrintZhCN\": \"1\",\n      \"cost\": null,\n      \"removalServices\": \"N\",\n      \"field1\": null,\n      \"value1\": null,\n      \"field2\": null,\n      \"value2\": null,\n      \"field3\": null,\n      \"value3\": null,\n      \"discountText\": null,\n      \"discountTextTchi\": null,\n      \"discountTextZhCN\": null,\n      \"style\": null,\n      \"goodsType\": \"parallel goods\",\n      \"warrantyPeriodUnit\": \"Years\",\n      \"warrantyPeriod\": 1,\n      \"warrantySupplierCh\": \"1\",\n      \"warrantySupplierEn\": \"1\",\n      \"warrantySupplierZhCN\": \"1\",\n      \"serviceCentreAddressCh\": \"1\",\n      \"serviceCentreAddressEn\": \"1\",\n      \"serviceCentreAddressZhCN\": \"1\",\n      \"serviceCentreEmail\": \"1@hktv.com.hk\",\n      \"serviceCentreContact\": \"1\",\n      \"warrantyRemarkEn\": \"1\",\n      \"warrantyRemarkCh\": \"1\",\n      \"warrantyRemarkZhCN\": \"1\",\n      \"onOfflineStatus\": \"ONLINE\",\n      \"productCategories\": [\n        {\n          \"name\": \"AA13408000001 - Medical Equipment\",\n          \"productCatCode\": \"AA13408000001\",\n          \"productCatName\": \"Medical Equipment\"\n        }\n      ],\n      \"imagesMainPhotoList\": [\n        {\n          \"fileName\": \"a1_compress_KAzrySpiOb_20210818120505_01.jpg\",\n          \"imageType\": \"main\",\n          \"filePath\": \"https://mmstest-images.hkmpcl.com.hk/images/HKTV/100239/a1_compress_KAzrySpiOb_20210818 120505_01.jpg\"\n        }\n      ],\n      \"imagesProductPhotoList\": null,\n      \"imagesOtherPhotoList\": null,\n      \"imagesAdvertisingList\": null,\n      \"commissionRate\": null,\n      \"brandNameEn\": \"A1\",\n      \"brandNameTc\": \"A1\",\n      \"isPrimarySku\": \"Y\",\n      \"storeLandMarkFlag\": \"N\"\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"total\": 1,\n    \"totalPages\": 5\n  }\n}"
+      },
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Fail",
+          "zh-TW": "失敗",
+          "zh-CN": "失敗"
+        },
+        "example": "{\n    \"message\": \"\",\n    \"code\": \"fail\",\n    \"data\": null\n}"
+      }
+    ]
+  },
+  {
+    "id": "1762336693464",
+    "name": " Search All Product IDs by Store",
+    "nameTw": "按商店搜尋所有產品編號",
+    "description": "This API is used to retrieve all Product IDs under a specific storeCode.Pagination: Supports paginated queries using&nbsp;page&nbsp;and&nbsp;pageSize&nbsp;to control the number of returned records, with a maximum of 100 per page.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/product/hktv/products/queryProductCodeByStore",
+    "method": "GET",
+    "category": "Product",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Success",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{\n  \"message\": null,\n  \"code\": \"success\",\n  \"data\": [\n    \"a1\",\n    \"a2\",\n    \"a3\",\n    \"b1\",\n    \"b2\"\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"pageSize\": 100,\n    \"total\": 10000,\n    \"totalPages\": 100\n  }\n}"
+      },
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Fail",
+          "zh-TW": "失敗",
+          "zh-CN": "失敗"
+        },
+        "example": "{\n    \"message\": \"\",\n    \"code\": \"fail\",\n    \"data\": null\n}"
+      }
+    ]
+  },
+  {
+    "id": "1762337399512",
+    "name": " Batch Edit Product - Price",
+    "nameTw": "批量編輯商品 - 價格",
+    "description": "This API is used to batch edit the price information of SKUs, with a maximum of 100 SKUs per request.After submission, the update is asynchronous, and the result must be checked using the Check Product Record API.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/product/hktv/batch/edit/price",
+    "method": "POST",
+    "category": "Product",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "[\n  {\n    \"skuCode\": \"skuCode\",\n    \"originalPrice\": 20.00,\n    \"sellingPrice\": 0.00,\n    \"style\": \"RED\",\n    \"discountTextEn\": \"discountTextEn_da85b29cb4b5\",\n    \"discountTextCh\": \"discountTextCh_5211e4737983\",\n    \"discountTextZhCN\": discountTextCh_5211e4737984,\n  }\n]",
+        "description": {
+          "en": "Single Update at a Time",
+          "zh-TW": "一次單個更新",
+          "zh-CN": "一次单个更新"
+        }
+      },
+      {
+        "contentType": "application/json",
+        "example": "[\n  {\n    \"skuCode\": \"skuCode1\",\n    \"originalPrice\": 20.00,\n    \"sellingPrice\": 0.00,\n    \"style\": \"RED\",\n    \"discountTextEn\": \"discountTextEn_da85b29cb4b5\",\n    \"discountTextCh\": \"discountTextCh_5211e4737983\",\n    \"discountTextZhCN\": discountTextCh_5211e4737984,\n  },\n {\n    \"skuCode\": \"skuCode2\",\n    \"originalPrice\": 20.00,\n    \"sellingPrice\": 0.00,\n    \"style\": \"RED\",\n    \"discountTextEn\": \"discountTextEn_da85b29cb4b5\",\n    \"discountTextCh\": \"discountTextCh_5211e4737983\",\n    \"discountTextZhCN\": discountTextCh_5211e4737984,\n  }\n]",
+        "description": {
+          "en": "Batch Updates",
+          "zh-TW": "一筆多個更新",
+          "zh-CN": "一笔多个更新"
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Success",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{ \n  \"message\": \"Open API batch edit successful\", \n  \"code\": \"success\", \n  \"data\": {\n    \"recordId\": 1,\n    \"status\": \"success\", \n    \"message\": null \n  }\n}"
+      },
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "The entire request failed. Please check the results and avoid making duplicate API calls.",
+          "zh-TW": "整批請求失敗，請檢查結果並避免重複呼叫 API。",
+          "zh-CN": "整批请求失败，请检查结果并避免重复调用 API。"
+        },
+        "example": "\n{\n    \"status\": -1,\n    \"data\": null,\n    \"errorMessageList\": [\"Do not repeat the same action: The request has already been successfully submitted and is currently being processed. Please wait for the process to complete.\"],\n    \"fail\": true,\n    \"success\": false\n}"
+      }
+    ]
+  },
+  {
+    "id": "1762337600912",
+    "name": "Batch Edit Product - Product Ready Day",
+    "nameTw": "批量編輯商品 - 商品備貨天數",
+    "description": "This API is used to batch edit the Product Ready Day field value of products.Input Range: 1 to 100This operation is asynchronous, and results must be checked using the&nbsp;Check Product Record API.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/product/hktv/batch/edit/product-ready-days",
+    "method": "POST",
+    "category": "Product",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "[\n  {\n    \"skuCode\": \"single_create_oapi_test_1015_04\",\n    \"productReadyDays\": \"5\"\n  }\n]",
+        "description": {
+          "en": "Single Update at a Time",
+          "zh-TW": "一次單個更新",
+          "zh-CN": "一次单个更新"
+        }
+      },
+      {
+        "contentType": "application/json",
+        "example": "[\n  {\n    \"skuCode\": \"single_create_oapi_test_1015_04\",\n    \"productReadyDays\": \"5\"\n  },\n  {\n    \"skuCode\": \"SKU001\",\n    \"productReadyDays\": \"6\"\n  }\n]",
+        "description": {
+          "en": "Batch Updates",
+          "zh-TW": "一筆多個更新",
+          "zh-CN": "一笔多个更新"
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Success",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{ \n  \"message\": \"Open API batch edit successful\", \n  \"code\": \"success\", \n  \"data\": {\n    \"recordId\": 1,\n    \"status\": \"success\", \n    \"message\": null \n  }\n}"
+      },
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "The entire request failed. Please check the results and avoid making duplicate API calls.",
+          "zh-TW": "整批請求失敗，請檢查結果並避免重複呼叫 API。",
+          "zh-CN": "整批请求失败，请检查结果并避免重复调用 API。"
+        },
+        "example": "\n{\n    \"status\": -1,\n    \"data\": null,\n    \"errorMessageList\": [\"Do not repeat the same action: The request has already been successfully submitted and is currently being processed. Please wait for the process to complete.\"],\n    \"fail\": true,\n    \"success\": false\n}"
+      }
+    ]
+  },
+  {
+    "id": "1769394653692",
+    "name": "Multi-SKU Product Creation",
+    "nameTw": "多 SKU 商品創建",
+    "description": "The Multi-SKU Product Creation API allows merchants to create a single product containing multiple variations (up to 1,000 SKUs) in one request. By adopting a SPU-SKU hierarchical structure, this API optimizes resource usage and significantly improves the upload efficiency for cross-border merchants.Core Features:Batch Creation: Support for creating up to 1,000 SKUs under one product ID to reduce repeated API calls.Efficiency Optimization: Shared media (photos/videos) at the product level are processed only once, significantly reducing overall processing time.Asynchronous Processing: This is an asynchronous API. After submission, use the returned recordId to track the final status via the Check Product Record API.Validation Logic: If the Primary SKU fails, the entire request is rejected. If the Primary SKU is successful, remaining SKUs allow for partial success. Detailed results for each SKU must be checked via API.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/product/hktv/batch/save",
+    "method": "POST",
+    "category": "Product",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "{\n  \"productCode\": \"123456\",\n  \"productReadyMethod\": \"MLC\",\n  \"productCategories\": [\n    {\n      \"productCatCode\": \"AA00000000001\"\n    }\n  ],\n  \"primaryCategoryCode\": \"AA00000000001\",\n  \"brandCode\": \"ABC123456\",\n  \"skuName\": \"x\",\n  \"skuNameTchi\": \"X\",\n  \"skuNameZhCN\": \"x\",\n  \"invisibleFlag\": \"Y\",\n  \"manuCountry\": \"ABW\",\n  \"currencyCode\": \"RMB\",\n  \"warehouse\": \"H8888881-1\",\n  \"otherProductPhoto\": [\n    \"x\",\n    \"x\",\n    \"x\",\n    \"x\"\n  ],\n  \"otherPhoto\": [\n    \"x\",\n    \"x\",\n    \"x\"\n  ],\n  \"advertisingPhoto\": \"x\",\n  \"videoLink\": \"=ZVRuUV8bTrc\",\n  \"videoLinkEn\": \"Video Text 1\",\n  \"videoLinkCh\": \"影片文本 1\",\n  \"videoLinkZhCN\": \"视频文字 1\",\n  \"videoLink2\": \"=ZVRuUV8bTrc\",\n  \"videoLinkEn2\": \"Video Text 2\",\n  \"videoLinkCh2\": \"影片文本 2\",\n  \"videoLinkZhCN2\": \"视频文字 2\",\n  \"videoLink3\": \"=ZVRuUV8bTrc\",\n  \"videoLinkEn3\": \"Video Text 3\",\n  \"videoLinkCh3\": \"影片文本 3\",\n  \"videoLinkZhCN3\": \"视频文字 3\",\n  \"videoLink4\": \"=ZVRuUV8bTrc\",\n  \"videoLinkEn4\": \"Video Text 4\",\n  \"videoLinkCh4\": \"影片文本 4\",\n  \"videoLinkZhCN4\": \"视频文字 4\",\n  \"videoLink5\": \"=ZVRuUV8bTrc\",\n  \"videoLinkEn5\": \"Video Text 5\",\n  \"videoLinkCh5\": \"影片文本 5\",\n  \"videoLinkZhCN5\": \"视频文字 5\",\n  \"skuSDescEn\": \"X\",\n  \"skuSDescCh\": \"X\",\n  \"skuSDescZhCN\": \"x\",\n  \"skuLDescEn\": \"x\",\n  \"skuLDescCh\": \"x\",\n  \"skuLDescZhCN\": \"x\",\n  \"featureStartTime\": \"2026-01-26 12:00:00\",\n  \"featureEndTime\": \"2026-12-31 23:59:59\",\n  \"voucherType\": \"HOKOBUY\",\n  \"expiryType\": \"FIXED\",\n  \"redeemStartDate\": \"2026-02-01\",\n  \"fixedRedemptionDate\": \"2026-12-31\",\n  \"uponPurchaseDate\": null,\n  \"voucherDisplayType\": \"CODE128A\",\n  \"voucherTemplateType\": \"TemplateA\",\n  \"finePrintEn\": \"Fine Print\",\n  \"finePrintCh\": \"條款與細則\",\n  \"finePrintZhCN\": \"条款与细则\",\n  \"invoiceRemarksEn\": \"Invoice Remark\",\n  \"invoiceRemarksCh\": \"發票備註\",\n  \"invoiceRemarksZhCN\": \"发票备注\",\n  \"removalServices\": \"Y\",\n  \"warranty\": \"Y\",\n  \"goodsType\": \"authorized goods\",\n  \"warrantyPeriodUnit\": \"Years\",\n  \"warrantyPeriod\": 999,\n  \"warrantySupplierEn\": \"Warranty Supplier\",\n  \"warrantySupplierCh\": \"保養供應商\",\n  \"warrantySupplierZhCN\": \"保养供应商\",\n  \"serviceCentreAddressEn\": \"Service Centre Address\",\n  \"serviceCentreAddressCh\": \"服務中心地址\",\n  \"serviceCentreAddressZhCN\": \"服务中心地址\",\n  \"serviceCentreEmail\": \"TEST@shaolter.com\",\n  \"serviceCentreContact\": \"Service Centre Contact\",\n  \"warrantyRemarkEn\": \"Warranty Remark\",\n  \"warrantyRemarkCh\": \"保養備註\",\n  \"warrantyRemarkZhCN\": \"保养备注\",\n  \"returnDays\": 7,\n  \"productReadyDays\": \"5\",\n  \"pickupDays\": \"MSU\",\n  \"pickupTimeslot\": \"AM/PM/EV\",\n  \"productOverseaDeliveryList\": [\n    \"MO\"\n  ],\n  \"minimumShelfLife\": 1,\n  \"skus\": [\n    {\n      \"skuCode\": \"123456\",\n      \"isPrimarySku\": \"N\",\n      \"skuName\": \"x\",\n      \"skuNameTchi\": \"X\",\n      \"skuNameZhCN\": \"x\",\n      \"skuSDescEn\": \"X\",\n      \"skuSDescCh\": \"X\",\n      \"skuSDescZhCN\": \"x\",\n      \"skuLDescEn\": \"x\",\n      \"skuLDescCh\": \"x\",\n      \"skuLDescZhCN\": \"x\",\n      \"mainPhoto\": \"x\",\n      \"userMax\": 10,\n      \"colorFamilies\": \"BEIGE\",\n      \"colorEn\": \"_Beige(7229)\",\n      \"sizeSystem\": \"INTL\",\n      \"size\": \"67cm-135cm\",\n      \"field1\": \"power\",\n      \"value1\": \"p0d00\",\n      \"field2\": \"cyl\",\n      \"value2\": \"c-0d75\",\n      \"field3\": \"axis\",\n      \"value3\": \"a20\",\n      \"originalPrice\": 30,\n      \"sellingPrice\": 25,\n      \"style\": \"RED\",\n      \"discountText\": \"Discount Text\",\n      \"discountTextTchi\": \"折扣文字描述\",\n      \"discountTextZhCN\": \"折扣文字描述\",\n      \"barcodes\": [\n        \"12456\"\n      ],\n      \"weight\": 4,\n      \"weightUnit\": \"g\",\n      \"packHeight\": 1,\n      \"packLength\": 2,\n      \"packDepth\": 3,\n      \"cartonHeight\": 5,\n      \"cartonLength\": 6,\n      \"cartonWidth\": 7,\n      \"packDimensionUnit\": \"mm\",\n      \"packBoxType\": \"H\",\n      \"packSpecEn\": \"Packing Spec\",\n      \"packSpecCh\": \"包裝規格\",\n      \"packSpecZhCN\": \"包装规格\",\n      \"onOfflineStatus\": \"ONLINE\",\n      \"externalPlatform\": {\n        \"source\": [\n          \"TMALL\"\n        ],\n        \"productId\": \"123456\",\n        \"skuId\": \"123465\",\n        \"categoryId\": \"text\"\n      }\n    }\n  ]\n}",
+        "description": {
+          "en": "Single SKU at a Time",
+          "zh-TW": "一次單個",
+          "zh-CN": "一次单个"
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Success",
+          "zh-TW": "成功",
+          "zh-CN": "成功"
+        },
+        "example": "{ \n  \"message\": \"Open API batch create successful\", \n  \"code\": \"success\", \n  \"data\": {\n    \"recordId\": 1,\n    \"status\": \"success\", \n    \"message\": null \n  }\n}"
+      },
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "This is the response returned when the batch update operation fails.  No additional API calls are required to query the result; the failure reason is included in this response.",
+          "zh-TW": "這是批量更新操作失敗時返回的回應。  不需要額外呼叫 API 查詢結果，失敗原因已包含在此回應中。",
+          "zh-CN": "这是批量更新操作失败时返回的响应。  不需要额外调用 API 查询结果，失败原因已包含在此响应中。"
+        },
+        "example": "{ \n  \"message\": \"Open API batch create failed\", \n  \"code\": \"fail\", \n  \"data\": {\n    \"recordId\": null,\n    \"status\": \"fail\", \n    \"message\": [\n       \"error1\",\"error2\"\n    ]\n  }\n}"
+      },
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "The entire request failed. Please check the results and avoid making duplicate API calls.",
+          "zh-TW": "整批請求失敗，請檢查結果並避免重複呼叫 API。",
+          "zh-CN": "整批请求失败，请检查结果并避免重复调用 API。"
+        },
+        "example": "{\n    \"status\": -1,\n    \"data\": null,\n    \"errorMessageList\": [\"Do not repeat the same action: The request has already been successfully submitted and is currently being processed. Please wait for the process to complete.\"],\n    \"fail\": true,\n    \"success\": false\n}"
+      }
+    ]
+  }
+]
