@@ -17,8 +17,6 @@ This toolkit ships HKTVmall's Open API knowledge as plug-in skills, so your agen
 
 Then reload (`/reload-plugins`) and the skills become available automatically whenever you ask about HKTVmall APIs.
 
-**Cursor** — open Settings > Features > Chat, scroll to "Plugins", and search for **HKTVmall**. Or install from the [Cursor Marketplace](https://cursor.com/marketplace).
-
 **Gemini CLI** — from your shell, run:
 
 ```
