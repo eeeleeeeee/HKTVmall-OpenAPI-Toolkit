@@ -12,7 +12,7 @@ Base URL for all Inventory APIs: `https://merchant-oapi.shoalter.com`
 
 ```
 Content-Type: application/json
-x-auth-token: <token>        # obtain via auth flow
+x-auth-token: <token>        # see hktvmall-auth skill
 storeCode: <Your Store Code> # e.g. H8888881
 platformCode: HKTV
 businessType: eCommerce

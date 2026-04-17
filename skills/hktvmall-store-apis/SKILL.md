@@ -12,7 +12,7 @@ Base URL for all Store APIs: `https://mms-api.shoalter.com/mmsAdmin`
 
 ```
 Content-Type: application/json
-x-auth-token: <token>        # obtain via auth flow
+x-auth-token: <token>        # see hktvmall-auth skill
 storeCode: <Your Store Code> # e.g. H8888881
 platformCode: HKTV
 businessType: eCommerce
