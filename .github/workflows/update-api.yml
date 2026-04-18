@@ -34,9 +34,14 @@ jobs:
         run: |
           git diff --quiet || echo "changed=true" >> "$GITHUB_OUTPUT"
 
+      - name: Log no changes
+        if: steps.diff.outputs.changed != 'true'
+        run: echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) [INFO] No upstream changes detected, skipping commit."
+
       - name: Commit and push if changed
         if: steps.diff.outputs.changed == 'true'
         run: |
+          echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) [INFO] Upstream changes detected, committing."
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add api-data.json tutorials-data.json qna-data.json skills/
