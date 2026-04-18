@@ -285,6 +285,7 @@
         "value": "eCommerce"
       }
     ],
+    "requestBodies": null,
     "responses": [
       {
         "statusCode": "200",
@@ -1288,6 +1289,7 @@
         }
       }
     ],
+    "requestBodies": null,
     "responses": [
       {
         "statusCode": "200",
@@ -1296,7 +1298,7 @@
           "zh-TW": "Success",
           "zh-CN": "Success"
         },
-        "example": "{\n    \"message\": null,\n    \"code\": \"success\",\n    \"data\": [\n        {\n            \"recordId\": 60535,\n            \"status\": \"FAIL\",\n            \"rows\": [\n                {\n                    \"status\": \"FAIL\",\n                    \"uuid\": null,\n                    \"skuId\": \"X123465\",\n                    \"errorMessage\": \"Store warehouse doesn't exist, \\nInput Product Ready Method isn''t available to this store, \\nCannot find any matches contract terms.\"\n                }\n            ]\n        },\n        {\n            \"recordId\": 60536,\n            \"status\": \"SUCCESS\",\n            \"rows\": [\n                {\n                    \"status\": \"SUCCESS\",\n                    \"uuid\": \"78ded184-58e1-472f-b892-e6b816cf05c5\",\n                    \"skuId\": \"X123465\",\n                    \"errorMessage\": null\n                }\n            ]\n        }\n    ]\n}"
+        "example": "{\n    \"message\": null,\n    \"code\": \"success\",\n    \"data\": [\n        {\n            \"recordId\": 60535,\n            \"status\": \"FAIL\",\n            \"rows\": [\n                {\n                    \"status\": \"FAIL\",\n                    \"uuid\": null,\n                    \"skuId\": \"X123465\",\n                    \"errorMessage\": \"Store warehouse doesn't exist, \\\\nInput Product Ready Method isn''t available to this store, \\\\nCannot find any matches contract terms.\"\n                }\n            ]\n        },\n        {\n            \"recordId\": 60536,\n            \"status\": \"SUCCESS\",\n            \"rows\": [\n                {\n                    \"status\": \"SUCCESS\",\n                    \"uuid\": \"78ded184-58e1-472f-b892-e6b816cf05c5\",\n                    \"skuId\": \"X123465\",\n                    \"errorMessage\": null\n                }\n            ]\n        }\n    ]\n}"
       }
     ]
   },
@@ -1358,6 +1360,7 @@
         }
       }
     ],
+    "requestBodies": null,
     "responses": [
       {
         "statusCode": "200",
@@ -1536,6 +1539,7 @@
         }
       }
     ],
+    "requestBodies": null,
     "responses": [
       {
         "statusCode": "200",

@@ -571,7 +571,7 @@ The Query Product Update Result API is used to retrieve the result of product up
                     "status": "FAIL",
                     "uuid": null,
                     "skuId": "X123465",
-                    "errorMessage": "Store warehouse doesn't exist, \nInput Product Ready Method isn''t available to this store, \nCannot find any matches contract terms."
+                    "errorMessage": "Store warehouse doesn't exist, \\nInput Product Ready Method isn''t available to this store, \\nCannot find any matches contract terms."
                 }
             ]
         },
