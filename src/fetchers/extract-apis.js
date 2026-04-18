@@ -1,12 +1,37 @@
 const fs = require("fs");
-const vm = require("vm");
 const path = require("path");
+const JSON5 = require("json5");
+
+/**
+ * 將 JS bundle 片段中的 template literal 轉成普通 JSON 字串。
+ * 若發現 ${} 插值語法則拋錯——這是程式碼注入的警訊，不應出現在純資料裡。
+ */
+function normalizeTemplateLiterals(code) {
+  return code.replace(/`((?:[^`\\]|\\.)*)`/gs, (match, content) => {
+    if (content.includes("${")) {
+      throw new Error(
+        "Bundle 資料中發現 template 插值 ${}，可能遭到注入攻擊，已中止解析"
+      );
+    }
+    const escaped = content
+      .replace(/\\/g, "\\\\")
+      .replace(/"/g, '\\"')
+      .replace(/\r\n/g, "\\n")
+      .replace(/\n/g, "\\n")
+      .replace(/\r/g, "\\n");
+    return `"${escaped}"`;
+  });
+}
 
 /**
  * 從 JS bundle 依括號層數提取一個陣列的原始字串
  */
 function extractArrayRaw(source, arrayStart) {
   const bracketStart = source.indexOf("[", arrayStart);
+  if (bracketStart === -1) {
+    throw new Error(`在位置 ${arrayStart} 找不到陣列起始括號 '['`);
+  }
+
   let depth = 0, inString = false, stringChar = "", inTemplate = false;
   let i = bracketStart;
   for (; i < source.length; i++) {
@@ -18,17 +43,32 @@ function extractArrayRaw(source, arrayStart) {
     if (ch === "[" || ch === "{") depth++;
     if (ch === "]" || ch === "}") { depth--; if (depth === 0) break; }
   }
+
+  if (depth !== 0) {
+    throw new Error("Bundle 資料括號不平衡，無法安全提取陣列");
+  }
+
   return source.slice(bracketStart, i + 1);
 }
 
 /**
+ * 安全解析 JS 陣列字串，使用 JSON5 取代 vm.runInNewContext。
+ * 先處理 minifier 的常見替換，再轉換 template literal，最後用 JSON5 解析。
+ */
+function safeParseArray(rawArray) {
+  // 處理 minifier 常見替換：!0 → true、!1 → false、void 0 → null
+  let normalized = rawArray
+    .replace(/!0/g, "true")
+    .replace(/!1/g, "false")
+    .replace(/void 0/g, "null");
+  normalized = normalizeTemplateLiterals(normalized);
+  return JSON5.parse(normalized);
+}
+
+/**
  * 從 HKTVmall 前端 JS bundle 提取 API 資料
- * 資料結構: const OR = [{ id, name, endpoint, method, category, ... }]
  */
 function extractApis(source) {
-
-  // 找出 API 陣列的起始位置
-  // 特徵：const <大寫變數>=[ { id:"<數字串>",name:{en:
   const startMatch = source.match(/const\s+([A-Z]{1,3})=(\[\{id:"[0-9]+",name:\{en:)/);
   if (!startMatch) {
     throw new Error("找不到 API 資料陣列，請確認 JS bundle 是否正確");
@@ -43,11 +83,7 @@ function extractApis(source) {
   const rawArray = extractArrayRaw(source, arrayStart);
   console.log(`找到 API 資料，原始長度: ${rawArray.length} 字元，變數名: ${varName}`);
 
-  // 用 vm 安全執行，提取陣列資料
-  const sandbox = { result: undefined };
-  vm.runInNewContext(`result = ${rawArray}`, sandbox);
-
-  return sandbox.result;
+  return safeParseArray(rawArray);
 }
 
 function main() {
@@ -65,11 +101,9 @@ function main() {
 
   console.log(`共找到 ${apis.length} 個 API`);
 
-  // 顯示摘要
   const categories = [...new Set(apis.map((a) => a.category))];
   console.log(`API 分類: ${categories.join(", ")}`);
 
-  // 輸出精簡版 JSON（只保留 AI 需要的欄位）
   const simplified = apis.map((api) => ({
     id: api.id,
     name: api.name?.en || api.name,
@@ -90,12 +124,10 @@ function main() {
   fs.writeFileSync(outputPath, JSON.stringify(simplified, null, 2), "utf-8");
   console.log(`已輸出到: ${outputPath}`);
 
-  // 提取 tutorials (認證文件等)
   extractTutorials(source);
 }
 
 function extractTutorials(source) {
-  // 找出所有 tutorials 陣列，取含 Authentication category 的那個
   const pattern = /([A-Za-z_$]{1,8})=(\[\{id:"[0-9]+",title:\{)/g;
   const allMatches = [...source.matchAll(pattern)];
   if (allMatches.length === 0) {
@@ -104,17 +136,23 @@ function extractTutorials(source) {
   }
 
   let tutorials = null;
-  let foundVarName = null;
   for (const match of allMatches) {
     const varName = match[1];
     const arrayStart = match.index;
-    const rawArray = extractArrayRaw(source, arrayStart);
-    const sandbox = { result: undefined };
-    vm.runInNewContext(`result = ${rawArray}`, sandbox);
-    const candidates = sandbox.result;
+
+    let rawArray, candidates;
+    try {
+      rawArray = extractArrayRaw(source, arrayStart);
+      candidates = safeParseArray(rawArray);
+    } catch (err) {
+      console.warn(`解析 tutorials 變數 ${varName} 失敗，跳過: ${err.message}`);
+      continue;
+    }
+
+    if (!Array.isArray(candidates)) continue;
+
     if (candidates.some((t) => t.category === "Authentication")) {
       tutorials = candidates;
-      foundVarName = varName;
       console.log(`找到 tutorials 資料，原始長度: ${rawArray.length} 字元，變數名: ${varName}`);
       break;
     }
@@ -130,7 +168,7 @@ function extractTutorials(source) {
     title: typeof t.title === "object" ? t.title.en : t.title,
     content: typeof t.content === "object"
       ? t.content.en.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").replace(/\n\s*\n+/g, "\n\n").trim()
-      : t.content,
+      : String(t.content).replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").trim(),
     category: t.category,
   }));
 

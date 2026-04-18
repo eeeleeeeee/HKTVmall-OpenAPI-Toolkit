@@ -7,5 +7,8 @@
     "extract": "node src/fetchers/extract-apis.js",
     "skills": "node src/tools/generate-skills.js",
     "build": "npm run fetch && npm run extract && npm run skills"
+  },
+  "dependencies": {
+    "json5": "^2.2.3"
   }
 }
