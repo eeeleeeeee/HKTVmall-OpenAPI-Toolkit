@@ -125,6 +125,53 @@ function main() {
   console.log(`已輸出到: ${outputPath}`);
 
   extractTutorials(source);
+  extractQnA(source);
+}
+
+function extractQnA(source) {
+  const marker = 'V6=[{id:"1",question:';
+  const markerIdx = source.indexOf(marker);
+  if (markerIdx === -1) {
+    console.warn("找不到 Q&A 陣列 (V6)，跳過");
+    return;
+  }
+
+  let rawArray;
+  try {
+    rawArray = extractArrayRaw(source, markerIdx);
+  } catch (err) {
+    console.warn(`提取 Q&A 陣列失敗: ${err.message}`);
+    return;
+  }
+
+  let qnas;
+  try {
+    qnas = safeParseArray(rawArray);
+  } catch (err) {
+    console.warn(`解析 Q&A 陣列失敗: ${err.message}`);
+    return;
+  }
+
+  if (!Array.isArray(qnas)) {
+    console.warn("Q&A 資料不是陣列，跳過");
+    return;
+  }
+
+  const stripped = qnas.map((q) => ({
+    id: q.id,
+    question: typeof q.question === "object" ? q.question.en : q.question,
+    questionTw: typeof q.question === "object" ? q.question["zh-TW"] : null,
+    answer: typeof q.answer === "object"
+      ? q.answer.en.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").replace(/\n\s*\n+/g, "\n\n").trim()
+      : String(q.answer).replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").trim(),
+    tags: q.tags || [],
+  }));
+
+  console.log(`共找到 ${qnas.length} 個 Q&A: ${stripped.map((q) => q.question).join(", ")}`);
+
+  const outputPath = path.join(__dirname, "../../qna-data.json");
+  fs.writeFileSync(outputPath, JSON.stringify(stripped, null, 2), "utf-8");
+  console.log(`已輸出到: ${outputPath}`);
 }
 
 function extractTutorials(source) {

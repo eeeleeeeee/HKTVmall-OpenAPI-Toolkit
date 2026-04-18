@@ -267,11 +267,97 @@ function buildAuthSkillContent(rawContent) {
   ].join("\n");
 }
 
+function generateTutorialsSkill(tutorialsDataPath, skillsOutputDir) {
+  if (!fs.existsSync(tutorialsDataPath)) {
+    console.warn("找不到 tutorials-data.json，跳過 hktvmall-tutorials skill 生成");
+    return;
+  }
+
+  const tutorials = JSON.parse(fs.readFileSync(tutorialsDataPath, "utf-8"));
+  if (tutorials.length === 0) {
+    console.warn("tutorials-data.json 為空，跳過");
+    return;
+  }
+
+  const lines = [
+    `---`,
+    `name: hktvmall-tutorials`,
+    `description: HKTVmall step-by-step tutorials and guides. Use when asking about API tutorials, how-to guides, contacting technical support, or getting started with HKTVmall OpenAPI integration.`,
+    `---`,
+    ``,
+    `# HKTVmall API Tutorials`,
+    ``,
+    `Step-by-step guides to help you master HKTVmall OpenAPI integration.`,
+    ``,
+  ];
+
+  for (const t of tutorials) {
+    lines.push(`## ${t.title}`);
+    lines.push(``);
+    if (t.category) lines.push(`*Category: ${t.category}*`);
+    lines.push(``);
+    lines.push(t.content);
+    lines.push(``);
+    lines.push(`---`);
+    lines.push(``);
+  }
+
+  const skillDir = path.join(skillsOutputDir, "hktvmall-tutorials");
+  fs.mkdirSync(skillDir, { recursive: true });
+  fs.writeFileSync(path.join(skillDir, "SKILL.md"), lines.join("\n"), "utf-8");
+  console.log(`已生成: hktvmall-tutorials/SKILL.md (${tutorials.length} 個 tutorial)`);
+}
+
+function generateQnASkill(qnaDataPath, skillsOutputDir) {
+  if (!fs.existsSync(qnaDataPath)) {
+    console.warn("找不到 qna-data.json，跳過 hktvmall-qna skill 生成");
+    return;
+  }
+
+  const qnas = JSON.parse(fs.readFileSync(qnaDataPath, "utf-8"));
+  if (qnas.length === 0) {
+    console.warn("qna-data.json 為空，跳過");
+    return;
+  }
+
+  const lines = [
+    `---`,
+    `name: hktvmall-qna`,
+    `description: HKTVmall FAQ and Q&A reference. Use when asking about rate limits, HTTP 400/401/403/429 errors, API troubleshooting, common integration issues, or frequently asked questions about HKTVmall OpenAPI.`,
+    `---`,
+    ``,
+    `# HKTVmall Q&A / Frequently Asked Questions`,
+    ``,
+    `Answers to common questions about HKTVmall OpenAPI integration.`,
+    ``,
+  ];
+
+  for (const q of qnas) {
+    const tagStr = q.tags && q.tags.length > 0 ? ` \`${q.tags.join("` `")}\`` : "";
+    lines.push(`## ${q.question}`);
+    if (q.questionTw) lines.push(`*(${q.questionTw})*`);
+    if (tagStr) lines.push(`Tags:${tagStr}`);
+    lines.push(``);
+    lines.push(q.answer);
+    lines.push(``);
+    lines.push(`---`);
+    lines.push(``);
+  }
+
+  const skillDir = path.join(skillsOutputDir, "hktvmall-qna");
+  fs.mkdirSync(skillDir, { recursive: true });
+  fs.writeFileSync(path.join(skillDir, "SKILL.md"), lines.join("\n"), "utf-8");
+  console.log(`已生成: hktvmall-qna/SKILL.md (${qnas.length} 個 Q&A)`);
+}
+
 const apiDataPath = path.join(__dirname, "../../api-data.json");
 const tutorialsDataPath = path.join(__dirname, "../../tutorials-data.json");
+const qnaDataPath = path.join(__dirname, "../../qna-data.json");
 const skillsOutputDir = path.join(__dirname, "../../skills");
 
 console.log("開始生成 Skills...");
 generateSkills(apiDataPath, skillsOutputDir);
 generateAuthSkill(tutorialsDataPath, skillsOutputDir);
+generateTutorialsSkill(tutorialsDataPath, skillsOutputDir);
+generateQnASkill(qnaDataPath, skillsOutputDir);
 console.log("完成！");
