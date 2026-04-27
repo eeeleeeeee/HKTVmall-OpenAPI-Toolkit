@@ -645,9 +645,9 @@
         "name": "storeCode",
         "value": "{{Your Store Code}}",
         "description": {
-          "en": "e.g. H8220001",
-          "zh-TW": "e.g. H8220001",
-          "zh-CN": "e.g. H8220001"
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
         }
       },
       {
@@ -662,7 +662,7 @@
     "requestBodies": [
       {
         "contentType": "application/json",
-        "example": "{\n   \"subOrderNumbers\":[\n      \"H250212003003-H1234567\"\n   ]\n}",
+        "example": "{\n   \"subOrderNumbers\":[\n      \"H250212003003-H8888881\"\n   ]\n}",
         "description": {
           "en": "Single search at a Time",
           "zh-TW": "一次單個搜索",
@@ -671,7 +671,7 @@
       },
       {
         "contentType": "application/json",
-        "example": "{\n   \"subOrderNumbers\":[\n      \"H250108004011-H1234567\",\n      \"H250108004034-H1234567\",\n      \"H250203002042-H1234567\"\n   ]\n}",
+        "example": "{\n   \"subOrderNumbers\":[\n      \"H250108004011-H8888881\",\n      \"H250108004034-H8888881\",\n      \"H250203002042-H8888881\"\n   ]\n}",
         "description": {
           "en": "Multiple Searches at a Time",
           "zh-TW": "一次多個搜索",
@@ -687,7 +687,7 @@
           "zh-TW": "成功",
           "zh-CN": "成功"
         },
-        "example": "{\n    \"message\": \"success\",\n    \"code\": \"success\",\n    \"data\": {\n        \"successList\": [\n            {\n                \"consignmentCode\": \"5533727\",\n                \"trackingId\": \"4005337275\",\n                \"transactionId\": \"15481123719086096-51219011_20251224093027\",\n                \"orderDate\": \"2025-12-24 09:30:28.0\",\n                \"consignmentStatus\": \"CONFIRMED\",\n                \"orderId\": \"H251224001003-H1234567\",\n                \"pickUpDate\": \"2098-01-01 11:00:00.0\",\n                \"deliveryDate\": \"2098-01-01 14:00:00.0\",\n                \"deliveryMethod\": \"merchant-delivery\",\n                \"recipientName\": \"hello_customer\",\n                \"contactPhoneNumber\": \"22221428\",\n                \"deliveryAddress\": \"香港, 半山, 天匯, 側\",\n                \"consignmentEntries\": [\n                    {\n                        \"skuId\": \"H1234567_S_A002\",\n                        \"skuNameEn\": \"A002\",\n                        \"skuNameZh\": \"A002\",\n                        \"brand\": \"黑橋牌\",\n                        \"quantity\": \"2\",\n                        \"totalPrice\": \"700.0\",\n                        \"pk\": null\n                    }\n                ],\n                \"warehouseId\": \"H123456709\",\n                \"deliverToWarehouse\": \"青衣 9/F\",\n                \"mainlandCourierTrackingNumber\": null,\n                \"mainlandCourierCompanyName\": null,\n                \"message\": null\n            },\n        ],\n        \"failList\": []\n    },\n    \"pagination\": {\n        \"page\": 1,\n        \"pageSize\": 6,\n        \"total\": 6\n    }\n}"
+        "example": "{\n    \"message\": \"success\",\n    \"code\": \"success\",\n    \"data\": {\n        \"successList\": [\n            {\n                \"consignmentCode\": \"5533727\",\n                \"trackingId\": \"4005337275\",\n                \"transactionId\": \"15481123719086096-51219011_20251224093027\",\n                \"orderDate\": \"2025-12-24 09:30:28.0\",\n                \"consignmentStatus\": \"CONFIRMED\",\n                \"orderId\": \"H251224001003-H8888881\",\n                \"pickUpDate\": \"2098-01-01 11:00:00.0\",\n                \"deliveryDate\": \"2098-01-01 14:00:00.0\",\n                \"deliveryMethod\": \"merchant-delivery\",\n                \"recipientName\": \"hello_customer\",\n                \"contactPhoneNumber\": \"22221428\",\n                \"deliveryAddress\": \"香港, 半山, 天匯, 側\",\n                \"consignmentEntries\": [\n                    {\n                        \"skuId\": \"H8888881_S_A002\",\n                        \"skuNameEn\": \"A002\",\n                        \"skuNameZh\": \"A002\",\n                        \"brand\": \"黑橋牌\",\n                        \"quantity\": \"2\",\n                        \"totalPrice\": \"700.0\",\n                        \"pk\": null\n                    }\n                ],\n                \"warehouseId\": \"H888888109\",\n                \"deliverToWarehouse\": \"青衣 9/F\",\n                \"mainlandCourierTrackingNumber\": null,\n                \"mainlandCourierCompanyName\": null,\n                \"message\": null\n            },\n        ],\n        \"failList\": []\n    },\n    \"pagination\": {\n        \"page\": 1,\n        \"pageSize\": 6,\n        \"total\": 6\n    }\n}"
       },
       {
         "statusCode": "200",
@@ -696,7 +696,7 @@
           "zh-TW": "部分失敗",
           "zh-CN": "部分失败"
         },
-        "example": "{\n  \"message\": \"Partial failure occurred while retrieving orders.\",\n  \"code\": \"fail\",\n  \"data\": {\n    \"successList\": [\n      {\n        \"consignmentCode\": \"5454005\",\n        \"trackingId\": \"4004540054\",\n        \"orderDate\": \"2025-02-03 16:22:06.0\",\n        \"consignmentStatus\": \"CONFIRMED\",\n        \"orderId\": \"H250203002042-H1234567\",\n        \"transactionId\": \"15481123719086096-32071166_20210914101606\",\n        \"pickUpDate\": \"2098-01-01 11:00:00.0\",\n        \"deliveryDate\": \"2098-01-01 14:00:00.0\",\n        \"deliveryMethod\": \"merchant-delivery\",\n        \"recipientName\": \"hello_customer \",\n        \"contactPhoneNumber\": \"62958451\",\n        \"deliveryAddress\": \"香港, 半山, 天匯, 1F\",\n        \"consignmentEntries\": [\n          {\n            \"skuId\": \"H1234567_S_LT-INS-001-Ginseng\",\n            \"skuNameEn\": \"Ginseng body insurance\",\n            \"skuNameZh\": \"給人參的人參保險\",\n            \"brand\": \"富衛保險\",\n            \"quantity\": \"2\",\n            \"totalPrice\": \"200.0\"\n          }\n        ],\n        \"warehouseId\": \"H123456709\",\n        \"deliverToWarehouse\": \"青衣 9/F\",\n        \"mainlandCourierTrackingNumber\": null,\n        \"mainlandCourierCompanyName\": null,\n        \"message\": null\n      }\n    ],\n    \"failList\": [\n      {\n        \"orderId\": \"H250203002042-H1234567\",\n        \"consignmentCode\": \"5454005\"\n      },\n      {\n        \"orderId\": \"H250203002043-H1234567\",\n        \"consignmentCode\": \"5454006\"\n      }\n    ]\n  },\n  \"pagination\": {\n    \"page\": 1,\n    \"pageSize\": 1,\n    \"total\": 1\n  }\n}"
+        "example": "{\n  \"message\": \"Partial failure occurred while retrieving orders.\",\n  \"code\": \"fail\",\n  \"data\": {\n    \"successList\": [\n      {\n        \"consignmentCode\": \"5454005\",\n        \"trackingId\": \"4004540054\",\n        \"orderDate\": \"2025-02-03 16:22:06.0\",\n        \"consignmentStatus\": \"CONFIRMED\",\n        \"orderId\": \"H250203002042-H8888881\",\n        \"transactionId\": \"15481123719086096-32071166_20210914101606\",\n        \"pickUpDate\": \"2098-01-01 11:00:00.0\",\n        \"deliveryDate\": \"2098-01-01 14:00:00.0\",\n        \"deliveryMethod\": \"merchant-delivery\",\n        \"recipientName\": \"hello_customer \",\n        \"contactPhoneNumber\": \"62958451\",\n        \"deliveryAddress\": \"香港, 半山, 天匯, 1F\",\n        \"consignmentEntries\": [\n          {\n            \"skuId\": \"H8888881_S_LT-INS-001-Ginseng\",\n            \"skuNameEn\": \"Ginseng body insurance\",\n            \"skuNameZh\": \"給人參的人參保險\",\n            \"brand\": \"富衛保險\",\n            \"quantity\": \"2\",\n            \"totalPrice\": \"200.0\"\n          }\n        ],\n        \"warehouseId\": \"H888888109\",\n        \"deliverToWarehouse\": \"青衣 9/F\",\n        \"mainlandCourierTrackingNumber\": null,\n        \"mainlandCourierCompanyName\": null,\n        \"message\": null\n      }\n    ],\n    \"failList\": [\n      {\n        \"orderId\": \"H250203002042-H8888881\",\n        \"consignmentCode\": \"5454005\"\n      },\n      {\n        \"orderId\": \"H250203002043-H8888881\",\n        \"consignmentCode\": \"5454006\"\n      }\n    ]\n  },\n  \"pagination\": {\n    \"page\": 1,\n    \"pageSize\": 1,\n    \"total\": 1\n  }\n}"
       },
       {
         "statusCode": "400",
@@ -822,9 +822,9 @@
         "name": "storeCode",
         "value": "{{Your Store Code}}",
         "description": {
-          "en": "e.g. H8220001",
-          "zh-TW": "e.g. H8220001",
-          "zh-CN": "e.g. H8220001"
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
         }
       },
       {
@@ -963,9 +963,9 @@
         "name": "storeCode",
         "value": "{{Your Store Code}}",
         "description": {
-          "en": "e.g. H8220001",
-          "zh-TW": "e.g. H8220001",
-          "zh-CN": "e.g. H8220001"
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
         }
       },
       {
@@ -1855,6 +1855,114 @@
           "zh-CN": "整批请求失败，请检查结果并避免重复调用 API。"
         },
         "example": "{\n    \"status\": -1,\n    \"data\": null,\n    \"errorMessageList\": [\"Do not repeat the same action: The request has already been successfully submitted and is currently being processed. Please wait for the process to complete.\"],\n    \"fail\": true,\n    \"success\": false\n}"
+      }
+    ]
+  },
+  {
+    "id": "1776762607268",
+    "name": "Get Order SKU Promotion ",
+    "nameTw": "查詢訂單 SKU 優惠活動資訊",
+    "description": "This API allows users to retrieve SKU promotion information by subOrderNumbers.\n                Supports querying by single or multiple subOrderNumbers.\n                Promotion supports: Free Gift Promotion, Mix and Match Promotion, Redemption Promotion\n            \n            Notes:\n            \n                subOrderNumbers can be obtained from the Get Order API.",
+    "version": "v1.0.0",
+    "baseUrl": "https://merchant-oapi.shoalter.com",
+    "endpoint": "/oapi/api/order/getPromotionOrder",
+    "method": "GET",
+    "category": "Order",
+    "status": "active",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "x-auth-token",
+        "value": "{{create it}}",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "storeCode",
+        "value": "{{Your Store Code}}",
+        "description": {
+          "en": "e.g. H8888881",
+          "zh-TW": "e.g. H8888881",
+          "zh-CN": "e.g. H8888881"
+        }
+      },
+      {
+        "name": "platformCode",
+        "value": "HKTV",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      },
+      {
+        "name": "businessType",
+        "value": "eCommerce",
+        "description": {
+          "en": "",
+          "zh-TW": "",
+          "zh-CN": ""
+        }
+      }
+    ],
+    "requestBodies": [
+      {
+        "contentType": "application/json",
+        "example": "{\n    \"subOrderNumbers\": [\n        \"H141209000003-H8888881\"\n    ],\n    \"page\":1,\n    \"pageSize\":10\n}",
+        "description": {
+          "en": "Single Sub-Order Query",
+          "zh-TW": "單筆子訂單查詢",
+          "zh-CN": "单笔子订单查询"
+        }
+      },
+      {
+        "contentType": "application/json",
+        "example": "{\n    \"subOrderNumbers\": [\n        \"H141209000003-H8888881\",\n        \"H141209000004-H8888881\"\n    ],\n    \"page\":1,\n    \"pageSize\":10\n}",
+        "description": {
+          "en": "Multiple Sub-Order Query",
+          "zh-TW": "多筆子訂單查詢",
+          "zh-CN": "多笔子订单查询"
+        }
+      }
+    ],
+    "responses": [
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Success",
+          "zh-TW": "整筆成功",
+          "zh-CN": "整笔成功"
+        },
+        "example": "{\n  \"message\": \"success\",\n  \"status\": \"success\",\n  \"data\": {\n    \"successList\": [\n      {\n        \"orderId\": \"H141209000003-H8888881\",\n        \"orderEntries\": [\n          {\n            \"skuId\": \"H8888881_S_FRESHMEAT2\",\n            \"promotion\": {\n              \"promotionType\": \"FreeGift\",\n              \"settingType\": \"Trigger\"\n            }\n          },\n          {\n            \"skuId\": \"H8888881_S_003\",\n            \"promotion\": {\n              \"promotionType\": \"Redemption\",\n              \"settingType\": \"Gift\"\n            }\n          },\n          {\n            \"skuId\": \"H8888881_S_002\",\n            \"promotion\": {\n              \"promotionType\": \"MixAndMatch\",\n              \"settingType\": \"Trigger\"\n            }\n          },\n          {\n            \"skuId\": \"H8888881_S_004\",\n            \"promotion\": {\n              \n            }\n          }\n        ]\n      }\n    ],\n    \"failList\": [\n      \n    ]\n  },\n  \"pagination\": {\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"total\": 1\n  }\n}"
+      },
+      {
+        "statusCode": "200",
+        "description": {
+          "en": "Partial failure",
+          "zh-TW": "部分失敗",
+          "zh-CN": "部分失败"
+        },
+        "example": "{\n  \"message\": \"Partial failure occurred while retrieving orders.\",\n  \"status\": \"fail\",\n  \"data\": {\n    \"successList\": [\n      {\n        \"orderId\": \"H141209000003-H8888881\",\n        \"orderEntries\": [\n          {\n            \"skuId\": \"H8888881_S_FRESHMEAT2\",\n            \"promotion\": {\n              \"promotionType\": \"FreeGift\",\n              \"settingType\": \"Trigger\"\n            }\n          },\n          {\n            \"skuId\": \"H8888881_S_003\",\n            \"promotion\": {\n              \"promotionType\": \"Redemption\",\n              \"settingType\": \"Gift\"\n            }\n          },\n          {\n            \"skuId\": \"H8888881_S_002\",\n            \"promotion\": {\n              \"promotionType\": \"MixAndMatch\",\n              \"settingType\": \"Trigger\"\n            }\n          },\n          {\n            \"skuId\": \"H8888881_S_004\",\n            \"promotion\": {\n              \n            }\n          }\n        ]\n      }\n    ],\n    \"failList\": [\n      \"H141209000003-H8888881\"\n    ]\n  },\n  \"pagination\": {\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"total\": 1\n  }\n}"
+      },
+      {
+        "statusCode": "400",
+        "description": {
+          "en": "Fully failure",
+          "zh-TW": "整筆失敗",
+          "zh-CN": "整笔失败"
+        },
+        "example": "{\n    \"message\": \"Unable to get results from requests. Try again or contact support.\",\n    \"code\": \"fail\",\n    \"data\": null,\n    \"pagination\": {\n        \"page\": null,\n        \"pageSize\": null,\n        \"total\": null\n    }\n}"
       }
     ]
   }

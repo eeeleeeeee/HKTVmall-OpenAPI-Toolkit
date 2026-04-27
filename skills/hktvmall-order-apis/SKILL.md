@@ -1,6 +1,6 @@
 ---
 name: hktvmall-order-apis
-description: HKTVmall Order API reference. Use when writing code that calls HKTVmall Order endpoints (GET /oapi/api/order/orders, GET /oapi/api/order/details, POST /oapi/api/order/updateOrderStatus, POST /oapi/api/order/cancel, POST /oapi/api/order/splitWaybills, POST /oapi/api/order/printWaybills/html, POST /oapi/api/order/updateMerchantDeliveryInfo, GET /oapi/api/order/returnEntries, POST /oapi/api/order/uploadMainlandParcelInfo).
+description: HKTVmall Order API reference. Use when writing code that calls HKTVmall Order endpoints (GET /oapi/api/order/orders, GET /oapi/api/order/details, POST /oapi/api/order/updateOrderStatus, POST /oapi/api/order/cancel, POST /oapi/api/order/splitWaybills, POST /oapi/api/order/printWaybills/html, POST /oapi/api/order/updateMerchantDeliveryInfo, GET /oapi/api/order/returnEntries, POST /oapi/api/order/uploadMainlandParcelInfo, GET /oapi/api/order/getPromotionOrder).
 ---
 
 # HKTVmall Order API Reference
@@ -97,7 +97,7 @@ The Get Order Detail API allows merchants to retrieve detailed order information
 ```json
 {
    "subOrderNumbers":[
-      "H250212003003-H1234567"
+      "H250212003003-H8888881"
    ]
 }
 ```
@@ -106,9 +106,9 @@ The Get Order Detail API allows merchants to retrieve detailed order information
 ```json
 {
    "subOrderNumbers":[
-      "H250108004011-H1234567",
-      "H250108004034-H1234567",
-      "H250203002042-H1234567"
+      "H250108004011-H8888881",
+      "H250108004034-H8888881",
+      "H250203002042-H8888881"
    ]
 }
 ```
@@ -127,7 +127,7 @@ The Get Order Detail API allows merchants to retrieve detailed order information
                 "transactionId": "15481123719086096-51219011_20251224093027",
                 "orderDate": "2025-12-24 09:30:28.0",
                 "consignmentStatus": "CONFIRMED",
-                "orderId": "H251224001003-H1234567",
+                "orderId": "H251224001003-H8888881",
                 "pickUpDate": "2098-01-01 11:00:00.0",
                 "deliveryDate": "2098-01-01 14:00:00.0",
                 "deliveryMethod": "merchant-delivery",
@@ -136,7 +136,7 @@ The Get Order Detail API allows merchants to retrieve detailed order information
                 "deliveryAddress": "香港, 半山, 天匯, 側",
                 "consignmentEntries": [
                     {
-                        "skuId": "H1234567_S_A002",
+                        "skuId": "H8888881_S_A002",
                         "skuNameEn": "A002",
                         "skuNameZh": "A002",
                         "brand": "黑橋牌",
@@ -145,7 +145,7 @@ The Get Order Detail API allows merchants to retrieve detailed order information
                         "pk": null
                     }
                 ],
-                "warehouseId": "H123456709",
+                "warehouseId": "H888888109",
                 "deliverToWarehouse": "青衣 9/F",
                 "mainlandCourierTrackingNumber": null,
                 "mainlandCourierCompanyName": null,
@@ -173,7 +173,7 @@ The Get Order Detail API allows merchants to retrieve detailed order information
         "trackingId": "4004540054",
         "orderDate": "2025-02-03 16:22:06.0",
         "consignmentStatus": "CONFIRMED",
-        "orderId": "H250203002042-H1234567",
+        "orderId": "H250203002042-H8888881",
         "transactionId": "15481123719086096-32071166_20210914101606",
         "pickUpDate": "2098-01-01 11:00:00.0",
         "deliveryDate": "2098-01-01 14:00:00.0",
@@ -183,7 +183,7 @@ The Get Order Detail API allows merchants to retrieve detailed order information
         "deliveryAddress": "香港, 半山, 天匯, 1F",
         "consignmentEntries": [
           {
-            "skuId": "H1234567_S_LT-INS-001-Ginseng",
+            "skuId": "H8888881_S_LT-INS-001-Ginseng",
             "skuNameEn": "Ginseng body insurance",
             "skuNameZh": "給人參的人參保險",
             "brand": "富衛保險",
@@ -191,7 +191,7 @@ The Get Order Detail API allows merchants to retrieve detailed order information
             "totalPrice": "200.0"
           }
         ],
-        "warehouseId": "H123456709",
+        "warehouseId": "H888888109",
         "deliverToWarehouse": "青衣 9/F",
         "mainlandCourierTrackingNumber": null,
         "mainlandCourierCompanyName": null,
@@ -200,11 +200,11 @@ The Get Order Detail API allows merchants to retrieve detailed order information
     ],
     "failList": [
       {
-        "orderId": "H250203002042-H1234567",
+        "orderId": "H250203002042-H8888881",
         "consignmentCode": "5454005"
       },
       {
-        "orderId": "H250203002043-H1234567",
+        "orderId": "H250203002043-H8888881",
         "consignmentCode": "5454006"
       }
     ]
@@ -658,6 +658,163 @@ The Upload Mainland Parcel Info API allows Mainland China merchants to upload Ma
             }
         ]
     },
+    "pagination": {
+        "page": null,
+        "pageSize": null,
+        "total": null
+    }
+}
+```
+
+---
+
+### Get Order SKU Promotion  (查詢訂單 SKU 優惠活動資訊)
+
+**GET** `https://merchant-oapi.shoalter.com/oapi/api/order/getPromotionOrder`
+Version: v1.0.0
+
+This API allows users to retrieve SKU promotion information by subOrderNumbers.
+                Supports querying by single or multiple subOrderNumbers.
+                Promotion supports: Free Gift Promotion, Mix and Match Promotion, Redemption Promotion
+            
+            Notes:
+            
+                subOrderNumbers can be obtained from the Get Order API.
+
+**Request Body:**
+
+*Single Sub-Order Query*
+```json
+{
+    "subOrderNumbers": [
+        "H141209000003-H8888881"
+    ],
+    "page":1,
+    "pageSize":10
+}
+```
+
+*Multiple Sub-Order Query*
+```json
+{
+    "subOrderNumbers": [
+        "H141209000003-H8888881",
+        "H141209000004-H8888881"
+    ],
+    "page":1,
+    "pageSize":10
+}
+```
+
+**Response:**
+
+```json
+{
+  "message": "success",
+  "status": "success",
+  "data": {
+    "successList": [
+      {
+        "orderId": "H141209000003-H8888881",
+        "orderEntries": [
+          {
+            "skuId": "H8888881_S_FRESHMEAT2",
+            "promotion": {
+              "promotionType": "FreeGift",
+              "settingType": "Trigger"
+            }
+          },
+          {
+            "skuId": "H8888881_S_003",
+            "promotion": {
+              "promotionType": "Redemption",
+              "settingType": "Gift"
+            }
+          },
+          {
+            "skuId": "H8888881_S_002",
+            "promotion": {
+              "promotionType": "MixAndMatch",
+              "settingType": "Trigger"
+            }
+          },
+          {
+            "skuId": "H8888881_S_004",
+            "promotion": {
+              
+            }
+          }
+        ]
+      }
+    ],
+    "failList": [
+      
+    ]
+  },
+  "pagination": {
+    "page": 1,
+    "pageSize": 10,
+    "total": 1
+  }
+}
+```
+
+```json
+{
+  "message": "Partial failure occurred while retrieving orders.",
+  "status": "fail",
+  "data": {
+    "successList": [
+      {
+        "orderId": "H141209000003-H8888881",
+        "orderEntries": [
+          {
+            "skuId": "H8888881_S_FRESHMEAT2",
+            "promotion": {
+              "promotionType": "FreeGift",
+              "settingType": "Trigger"
+            }
+          },
+          {
+            "skuId": "H8888881_S_003",
+            "promotion": {
+              "promotionType": "Redemption",
+              "settingType": "Gift"
+            }
+          },
+          {
+            "skuId": "H8888881_S_002",
+            "promotion": {
+              "promotionType": "MixAndMatch",
+              "settingType": "Trigger"
+            }
+          },
+          {
+            "skuId": "H8888881_S_004",
+            "promotion": {
+              
+            }
+          }
+        ]
+      }
+    ],
+    "failList": [
+      "H141209000003-H8888881"
+    ]
+  },
+  "pagination": {
+    "page": 1,
+    "pageSize": 10,
+    "total": 1
+  }
+}
+```
+
+```json
+{
+    "message": "Unable to get results from requests. Try again or contact support.",
+    "code": "fail",
+    "data": null,
     "pagination": {
         "page": null,
         "pageSize": null,

@@ -29,7 +29,7 @@ HKTVmall Open API Platform for merchant integration.
 - **GET** `/oapi/api/inventory/stock/details` — Get Stock Detail
 - **POST** `/oapi/api/inventory/stock` — Update Stock Level
 
-### Order (9 APIs)
+### Order (10 APIs)
 - **GET** `/oapi/api/order/orders` — Get Order
 - **GET** `/oapi/api/order/details` — Get Order Detail
 - **POST** `/oapi/api/order/updateOrderStatus` — Update Order Status
@@ -39,6 +39,7 @@ HKTVmall Open API Platform for merchant integration.
 - **POST** `/oapi/api/order/updateMerchantDeliveryInfo` — Update Merchant Delivery Info
 - **GET** `/oapi/api/order/returnEntries` — Get Return Request Orders
 - **POST** `/oapi/api/order/uploadMainlandParcelInfo` — Upload Mainland Parcel Info
+- **GET** `/oapi/api/order/getPromotionOrder` — Get Order SKU Promotion 
 
 ## Common Headers
 
