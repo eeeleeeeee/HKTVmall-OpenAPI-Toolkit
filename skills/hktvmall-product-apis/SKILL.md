@@ -23,7 +23,7 @@ businessType: eCommerce
 ### Get Product Detail (取得商品詳情)
 
 **GET** `https://merchant-oapi.shoalter.com/oapi/api/product/hktv/product/details`
-Version: v1.0.0
+Version: v1.0.1
 
 The Get Product Details API allows users to retrieve detailed product information by specifying input parameters to query specific product fields.Core Features:Input Range: Supports querying up to 100 SKU at a time, enabling flexible and bulk product data retrieval for efficient handling of large-scale product information.Data Integrity: Ensures that the returned product data includes all necessary fields and meets system requirements, reducing errors caused by missing data.
 
@@ -192,7 +192,8 @@ The Get Product Details API allows users to retrieve detailed product informatio
             "isPrimarySku": "Y",
             "storeLandMarkFlag": "N",
             "partnerInfo": null,
-            "externalPlatform": null
+            "externalPlatform": null,
+            "merchant_expiry_date": "12/31/2026"
         }
     ]
 }
@@ -203,7 +204,7 @@ The Get Product Details API allows users to retrieve detailed product informatio
 ### Create Product (建立商品)
 
 **POST** `https://merchant-oapi.shoalter.com/oapi/api/product/hktv/single/save`
-Version: v1.0.1
+Version: v1.0.2
 
 The Create Product API enables users to create products, supporting the creation of only one product per request. This API is suitable for basic operations of product addition on the HKTV platform, allowing for fast and accurate product data creation.Core Features:Single Product Creation: Each request supports creating only one product, ensuring operational stability and accuracy.Flexible Configuration: Allows configuration of detailed attributes such as multilingual names, descriptions, prices, brands, and categories to meet diverse product requirements.Multimedia Support: Supports product images, video links, and other multimedia content to enhance product presentation.
 
@@ -336,7 +337,8 @@ The Create Product API enables users to create products, supporting the creation
     "warrantyRemarkEn": "Warranty Remark",
     "warrantyRemarkCh": "保養備註",
     "warrantyRemarkZhCN": "保养备注",
-    "warehouse": "H8888881-1"
+    "warehouse": "H8888881-1",
+    "merchantExpiryDate": "2026-12-31"
 }
 ```
 
@@ -384,7 +386,7 @@ The Create Product API enables users to create products, supporting the creation
 ### Batch Edit Product - All Field (批量編輯商品 - 所有欄位)
 
 **POST** `https://merchant-oapi.shoalter.com/oapi/api/product/hktv/batch/editAll`
-Version: v1.0.0
+Version: v1.0.1
 
 The Batch Edit Product - All Field allows users to update product information in bulk, supporting modifications for up to 100 products per request. This API is ideal for efficiently managing large-scale product updates on the HKTV platform, ensuring flexibility and accuracy.Core Features:Bulk Product Updates: Each request supports updating up to 100 products, optimizing operational efficiency for large-scale product management.Selective Field Updates:Fields can be left blank to retain original values.Omitted fields or fields with a&nbsp;null&nbsp;value will remain unchanged.To remove specific data, provide an empty string ("") or an empty array ([]).Flexible Configuration: Update multilingual names, descriptions, prices, brands, categories, and other attributes to meet diverse business requirements.Error Handling: Built-in mechanisms validate requests and provide clear feedback for errors, ensuring accurate updates.After submission, the update is asynchronous, and the result must be checked using the&nbsp;Check Product Record API.
 
@@ -504,7 +506,8 @@ The Batch Edit Product - All Field allows users to update product information in
      ],
     "minimumShelfLife": 0,
     "onOfflineStatus": "ONLINE",
-    "warehouse":"H8888881-1"
+    "warehouse":"H8888881-1",
+    "merchantExpiryDate": "2026-12-31"
   }
 ]
 ```
@@ -596,7 +599,7 @@ The Query Product Update Result API is used to retrieve the result of product up
 ### Search Product by Time with Pagination (按時間搜尋商品並支持分頁)
 
 **GET** `https://merchant-oapi.shoalter.com/oapi/api/product/hktv/products/queryByTime`
-Version: v1.0.0
+Version: v1.0.1
 
 This API is used to retrieve updated SKU information based on a time range.Time Range: Optionally input&nbsp;updateTimeFrom&nbsp;and&nbsp;updateTimeTo&nbsp;as filter criteria.Without Time Range: If no time range is provided, all SKU data will be returned.Pagination: A maximum of 100 records per page can be returned, with a default of 10 records per page.
 
@@ -724,7 +727,8 @@ This API is used to retrieve updated SKU information based on a time range.Time 
       "brandNameEn": "A1",
       "brandNameTc": "A1",
       "isPrimarySku": "Y",
-      "storeLandMarkFlag": "N"
+      "storeLandMarkFlag": "N",
+      "merchant_expiry_date": "12/31/2026"
     }
   ],
   "pagination": {
@@ -749,7 +753,7 @@ This API is used to retrieve updated SKU information based on a time range.Time 
 ### Search Product by Product ID (按產品編號搜尋商品)
 
 **POST** `https://merchant-oapi.shoalter.com/oapi/api/product/hktv/products/queryByProductCode`
-Version: v1.0.0
+Version: v1.0.1
 
 This API is used to retrieve SKU information based on Product ID.Multiple Product ID Query: Supports querying multiple&nbsp;productCode&nbsp;at once.Pagination: Allows defining the number of records per page (pageSize), with a maximum of 100.
 
@@ -897,7 +901,8 @@ This API is used to retrieve SKU information based on Product ID.Multiple Produc
       "brandNameEn": "A1",
       "brandNameTc": "A1",
       "isPrimarySku": "Y",
-      "storeLandMarkFlag": "N"
+      "storeLandMarkFlag": "N",
+      "merchant_expiry_date": "12/31/2026"
     }
   ],
   "pagination": {
@@ -1094,7 +1099,7 @@ This API is used to batch edit the Product Ready Day field value of products.Inp
 ### Multi-SKU Product Creation (多 SKU 商品創建)
 
 **POST** `https://merchant-oapi.shoalter.com/oapi/api/product/hktv/batch/save`
-Version: v1.0.0
+Version: v1.0.1
 
 The Multi-SKU Product Creation API allows merchants to create a single product containing multiple variations (up to 1,000 SKUs) in one request. By adopting a SPU-SKU hierarchical structure, this API optimizes resource usage and significantly improves the upload efficiency for cross-border merchants.Core Features:Batch Creation: Support for creating up to 1,000 SKUs under one product ID to reduce repeated API calls.Efficiency Optimization: Shared media (photos/videos) at the product level are processed only once, significantly reducing overall processing time.Asynchronous Processing: This is an asynchronous API. After submission, use the returned recordId to track the final status via the Check Product Record API.Validation Logic: If the Primary SKU fails, the entire request is rejected. If the Primary SKU is successful, remaining SKUs allow for partial success. Detailed results for each SKU must be checked via API.
 
@@ -1251,7 +1256,8 @@ The Multi-SKU Product Creation API allows merchants to create a single product c
         "productId": "123456",
         "skuId": "123465",
         "categoryId": "text"
-      }
+      },
+      "merchantExpiryDate": "2026-12-31"
     }
   ]
 }
