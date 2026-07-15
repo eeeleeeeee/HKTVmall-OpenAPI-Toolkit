@@ -166,21 +166,21 @@ The Get Product Details API allows users to retrieve detailed product informatio
             "imagesMainPhotoList": [
                 {
                     "fileName": "123456.jpg",
-                    "filePath": "https://cdn-media-test.hkmpcl.com.hk/dev-hktv-mms/HKTV/mms/uploadProductImage/247e/b58d/4398/123456.jpg",
+                    "filePath": "https://cdn.example.com/images/product/247e/b58d/4398/123456.jpg",
                     "imageType": "main"
                 }
             ],
             "imagesProductPhotoList": [
                 {
                     "fileName": "123456.jpg",
-                    "filePath": "https://cdn-media-test.hkmpcl.com.hk/dev-hktv-mms/HKTV/mms/uploadProductImage/fb4c/3f88/7122/123456.jpg",
+                    "filePath": "https://cdn.example.com/images/product/fb4c/3f88/7122/123456.jpg",
                     "imageType": "main"
                 }
             ],
             "imagesOtherPhotoList": [
                 {
                     "fileName": "123456.jpg",
-                    "filePath": "https://cdn-media-test.hkmpcl.com.hk/dev-hktv-mms/HKTV/mms/uploadProductImage/fb4c/3f88/7122/123456.jpg",
+                    "filePath": "https://cdn.example.com/images/product/fb4c/3f88/7122/123456.jpg",
                     "imageType": "main"
                 }
             ],
@@ -332,7 +332,7 @@ The Create Product API enables users to create products, supporting the creation
     "serviceCentreAddressEn": "Service Centre Address",
     "serviceCentreAddressCh": "服務中心地址", 
     "serviceCentreAddressZhCN": "服务中心地址", 
-    "serviceCentreEmail": "TEST@shaolter.com",
+    "serviceCentreEmail": "service@example.com",
     "serviceCentreContact": "Service Centre Contact",
     "warrantyRemarkEn": "Warranty Remark",
     "warrantyRemarkCh": "保養備註",
@@ -611,7 +611,7 @@ This API is used to retrieve updated SKU information based on a time range.Time 
   "code": "success",
   "data": [
     {
-      "createdBy": "hever_m_610@hktv.com.hk",
+      "createdBy": "merchant@example.com",
       "createdDate": "2021-08-18",
       "lastUpdatedBy": "SYSTEM",
       "lastUpdatedDate": "2021-09-10",
@@ -717,7 +717,7 @@ This API is used to retrieve updated SKU information based on a time range.Time 
         {
           "fileName": "a1_compress_KAzrySpiOb_20210818120505_01.jpg",
           "imageType": "main",
-          "filePath": "https://mmstest-images.hkmpcl.com.hk/images/HKTV/100239/a1_compress_KAzrySpiOb_20210818 120505_01.jpg"
+          "filePath": "https://images.example.com/product/a1_compress_KAzrySpiOb_20210818 120505_01.jpg"
         }
       ],
       "imagesProductPhotoList": null,
@@ -785,7 +785,7 @@ This API is used to retrieve SKU information based on Product ID.Multiple Produc
   "code": "success",
   "data": [
     {
-      "createdBy": "hever_m_610@hktv.com.hk",
+      "createdBy": "merchant@example.com",
       "createdDate": "2021-08-18",
       "lastUpdatedBy": "SYSTEM",
       "lastUpdatedDate": "2021-09-10",
@@ -891,7 +891,7 @@ This API is used to retrieve SKU information based on Product ID.Multiple Produc
         {
           "fileName": "a1_compress_KAzrySpiOb_20210818120505_01.jpg",
           "imageType": "main",
-          "filePath": "https://mmstest-images.hkmpcl.com.hk/images/HKTV/100239/a1_compress_KAzrySpiOb_20210818 120505_01.jpg"
+          "filePath": "https://images.example.com/product/a1_compress_KAzrySpiOb_20210818 120505_01.jpg"
         }
       ],
       "imagesProductPhotoList": null,
@@ -1188,7 +1188,7 @@ The Multi-SKU Product Creation API allows merchants to create a single product c
   "serviceCentreAddressEn": "Service Centre Address",
   "serviceCentreAddressCh": "服務中心地址",
   "serviceCentreAddressZhCN": "服务中心地址",
-  "serviceCentreEmail": "TEST@shaolter.com",
+  "serviceCentreEmail": "service@example.com",
   "serviceCentreContact": "Service Centre Contact",
   "warrantyRemarkEn": "Warranty Remark",
   "warrantyRemarkCh": "保養備註",
