@@ -343,22 +343,6 @@ The Cancel Order API allows merchants to cancel one or multiple orders, supporti
 ]
 ```
 
-*Partial Cancellation*
-```json
-[
-   {
-      "orderNumber":"H250424000078-B1316001",
-      "trackingId":"7144218492",
-      "entries":[
-         {
-            "productCode":"B1316001_S_StandardDelivery_MtoW_002",
-            "quantity": "1"
-         }
-      ]
-   }
-]
-```
-
 **Response:**
 
 ```json
@@ -469,7 +453,7 @@ The Print Waybill API allows merchants to print waybills that have not yet been 
 **POST** `https://merchant-oapi.shoalter.com/oapi/api/order/updateMerchantDeliveryInfo`
 Version: v1.0.0
 
-The Update Merchant Delivery Info API allows merchants to update waybill information for orders with the Merchant Delivery shipping method.Notes:This API is only applicable to waybills with the Merchant Delivery method. It does not apply to Standard Delivery or Non-Standard Delivery.The deliveryBy field should be set to "merchant_inhub" or "hktv_pickup" only if the merchant has signed a contract to use HKTV's last-mile delivery service.
+The Update Merchant Delivery Info API allows merchants to update waybill information for orders with the Merchant Delivery shipping method.Notes:This API is only applicable to waybills with the Merchant Delivery method. It does not apply to Standard Delivery or Non-Standard Delivery.
 
 **Request Body:**
 
@@ -481,10 +465,9 @@ The Update Merchant Delivery Info API allows merchants to update waybill informa
    "referenceNumber": "SF-123345",
    "remarks": “Delivery to 5th floor”,
    "dateContactedCustomer": “2025-02-12 10:59:54",
-   "deliveryBy": "merchant_inhub",
+   "deliveryBy": "Merchant",
    "subOrderNumber": "H250109003005-H8888881",
-   "trackingId": "593599783",
-   "expectedPickupDate": "2025-02-12"
+   "trackingId": "593599783"
  }
 ]
 ```

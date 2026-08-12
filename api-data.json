@@ -845,15 +845,6 @@
           "zh-TW": "整筆取消",
           "zh-CN": "整筆取消"
         }
-      },
-      {
-        "contentType": "application/json",
-        "example": "[\n   {\n      \"orderNumber\":\"H250424000078-B1316001\",\n      \"trackingId\":\"7144218492\",\n      \"entries\":[\n         {\n            \"productCode\":\"B1316001_S_StandardDelivery_MtoW_002\",\n            \"quantity\": \"1\"\n         }\n      ]\n   }\n]",
-        "description": {
-          "en": "Partial Cancellation",
-          "zh-TW": "部分取消",
-          "zh-CN": "部分取消"
-        }
       }
     ],
     "responses": [
@@ -1013,7 +1004,7 @@
     "id": "1758856207584",
     "name": "Update Merchant Delivery Info",
     "nameTw": "更新商家配送資訊",
-    "description": "The Update Merchant Delivery Info API allows merchants to update waybill information for orders with the Merchant Delivery shipping method.Notes:This API is only applicable to waybills with the Merchant Delivery method. It does not apply to Standard Delivery or Non-Standard Delivery.The deliveryBy field should be set to \"merchant_inhub\" or \"hktv_pickup\" only if the merchant has signed a contract to use HKTV's last-mile delivery service.",
+    "description": "The Update Merchant Delivery Info API allows merchants to update waybill information for orders with the Merchant Delivery shipping method.Notes:This API is only applicable to waybills with the Merchant Delivery method. It does not apply to Standard Delivery or Non-Standard Delivery.",
     "version": "v1.0.0",
     "baseUrl": "https://merchant-oapi.shoalter.com",
     "endpoint": "/oapi/api/order/updateMerchantDeliveryInfo",
@@ -1055,7 +1046,7 @@
     "requestBodies": [
       {
         "contentType": "application/json",
-        "example": "[\n {\n   \"deliveryDate\": \"2025-02-12 10:59:54\",\n   \"referenceNumber\": \"SF-123345\",\n   \"remarks\": “Delivery to 5th floor”,\n   \"dateContactedCustomer\": “2025-02-12 10:59:54\",\n   \"deliveryBy\": \"merchant_inhub\",\n   \"subOrderNumber\": \"H250109003005-H8888881\",\n   \"trackingId\": \"593599783\",\n   \"expectedPickupDate\": \"2025-02-12\"\n }\n]",
+        "example": "[\n {\n   \"deliveryDate\": \"2025-02-12 10:59:54\",\n   \"referenceNumber\": \"SF-123345\",\n   \"remarks\": “Delivery to 5th floor”,\n   \"dateContactedCustomer\": “2025-02-12 10:59:54\",\n   \"deliveryBy\": \"Merchant\",\n   \"subOrderNumber\": \"H250109003005-H8888881\",\n   \"trackingId\": \"593599783\"\n }\n]",
         "description": {
           "en": "Single transaction at a time",
           "zh-TW": "一次單筆",
